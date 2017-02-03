@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost']
 
+AUTH_USER_MODEL = 'HEMSapp.HemsUser'
+
 
 # Application definition
 
@@ -38,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'HEMSapp',
+    'rest_framework',
 ]
 
 MIDDLEWARE_CLASSES = [
