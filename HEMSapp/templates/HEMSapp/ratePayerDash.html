@@ -18,21 +18,59 @@
       <div class="inner">
         <a href="/" class="logo">HEMS</a>
         <nav id="nav">
-          <a href="index.html">Home</a>
-          <a href="generic.html">Generic</a>
-          <a href="elements.html">Elements</a>
+          <a href="home">Home</a>
+          <a href="logout">Logout</a>
         </nav>
         <a href="#navPanel" class="navPanelToggle"><span class="fa fa-bars"></span></a>
       </div>
     </header>
 
-    <!-- Rate Payer info -->
-    <div class="box" style="margin: 10px; width: 400px;">
-      <div class="4u 12u$(medium)" style="width: 100%;">
-        <h3>{{name}}</h3>
-        <p> {{address}}</p>
-      </div>
-    </div>
+    <!-- Main body-->
+		<div class="wrapper">
+
+			<!-- User Info Box -->
+	    <div class="box" style="margin: 10px; width: 30%;">
+	      <div class="4u 12u$(medium)" style="width: 100%;">
+	        <h3>{{first_name}} {{last_name}}</h3>
+					<p>rem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis sagittis eget. </p>
+	        <p> {{address}}</p>
+	      </div>
+	    </div>
+
+			<div class="box" style="margin: 10px; width: 30%;">
+	      <div class="4u 12u$(medium)" style="width: 100%;">
+	        <h3>Your Devices</h3>
+					<h4>First Hems Box Name</h4>
+					<div class="table-wrapper">
+						<table>
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Description</th>
+									<th>Value</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Battery 1</td>
+									<td>Some battery I bought.</td>
+									<td>30</td>
+								</tr>
+								<tr>
+									<td>Solar PV 1</td>
+									<td>Some Solar PV I bought.</td>
+									<td>56</td>
+								</tr>
+								<tr>
+									<td>Inverter 1</td>
+									<td>Some inverter I bought.</td>
+									<td>115</td>
+								</tr>
+							</tbody>
+					</div>
+	      </div>
+	    </div>
+		</div>
 
 
   </body>

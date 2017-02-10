@@ -122,7 +122,7 @@ class Asset(models.Model):
     #editable
     name = models.CharField(max_length=100, default="Untitled Node")
     status = models.BooleanField(default=True)
-    hemsBox = models.ForeignKey(HemsBox, on_delete=models.CASCADE)
+    hems_box = models.ForeignKey(HemsBox, on_delete=models.CASCADE)
     manufacturer = models.CharField(max_length=40, default="N/A")
 
     #Non-editable
@@ -142,25 +142,25 @@ class Inverter(Asset):
     #Information Unique to a Inverter
 
     class Meta:
-        default_related_name = 'solarPV_set'
+        default_related_name = 'inverter_set'
 
 class Grid(Asset):
     #Information Unique to a Grid
 
     class Meta:
-        default_related_name = 'solarPV_set'
+        default_related_name = 'grid_set'
 
 class Load(Asset):
     #Information Unique to a Load
 
     class Meta:
-        default_related_name = 'solarPV_set'
+        default_related_name = 'load_set'
 
 class Battery(Asset):
     #Information Unique to a Battery
 
     class Meta:
-        default_related_name = 'solarPV_set'
+        default_related_name = 'battery_set'
 
 
 ########################### Data Objects ####################
@@ -293,66 +293,66 @@ class StateOfCharge(HemsData):
 
 ######################## IN and OUT #######################
 class SolarPVIn(models.Model):
-    solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='in_set')
+    solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='in_set', null=True)
     incidentRadiations = GenericRelation(IncidentRadiation)
 
 class SolarPVOut(models.Model):
-    solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='out_set')
-    dcPowers = GenericRelation(DCPower)
+    solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='out_set', null=True)
+    dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class InverterIn(models.Model):
     inverter = models.OneToOneField(Inverter, on_delete=models.CASCADE, related_name='in_set')
-    dcPowers = GenericRelation(DCPower)
+    dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class InverterOut(models.Model):
     inverter = models.OneToOneField(Inverter, on_delete=models.CASCADE, related_name='out_set')
-    acpowers = GenericRelation(ACPower)
+    ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class GridIn(models.Model):
     grid = models.OneToOneField(Grid, on_delete=models.CASCADE, related_name='in_set')
-    acpowers = GenericRelation(ACPower)
+    ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class GridOut(models.Model):
     grid = models.OneToOneField(Grid, on_delete=models.CASCADE, related_name='out_set')
-    acpowers = GenericRelation(ACPower)
+    ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class LoadIn(models.Model):
     load = models.OneToOneField(Load, on_delete=models.CASCADE, related_name='in_set')
-    acpowers = GenericRelation(ACPower)
+    ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
 class BatteryIn(models.Model):
     battery = models.OneToOneField(Battery, on_delete=models.CASCADE, related_name='in_set')
-    acpowers = GenericRelation(ACPower)
+    ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
-    chargingVoltage = GenericRelation(ChargingVoltage)
-    chargingCurrent = GenericRelation(ChargingCurrent)
-    chargingRate = GenericRelation(ChargingRate)
-    converterEfficiency = GenericRelation(ConverterEfficiency)
+    charging_voltage = GenericRelation(ChargingVoltage)
+    charging_current = GenericRelation(ChargingCurrent)
+    charging_rate = GenericRelation(ChargingRate)
+    converter_efficiency = GenericRelation(ConverterEfficiency)
 
 class BatteryOut(models.Model):
     battery = models.OneToOneField(Battery, on_delete=models.CASCADE, related_name='out_set')
-    dcPowers = GenericRelation(DCPower)
+    dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
-    dischargingVoltage = GenericRelation(DischargingVoltage)
-    dischargingCurrent = GenericRelation(DischargingCurrent)
-    dischargingRate = GenericRelation(DischargingRate)
-    converterEfficiency = GenericRelation(ConverterEfficiency)
-    stateOfCharge = GenericRelation(StateOfCharge)
+    discharging_voltage = GenericRelation(DischargingVoltage)
+    discharging_current = GenericRelation(DischargingCurrent)
+    discharging_rate = GenericRelation(DischargingRate)
+    converter_efficiency = GenericRelation(ConverterEfficiency)
+    state_of_charge = GenericRelation(StateOfCharge)

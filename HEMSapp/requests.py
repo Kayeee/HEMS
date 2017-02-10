@@ -9,10 +9,15 @@ def login(request):
 
     if user:
         auth.login(request, user)
-        return HttpResponseRedirect('ratePayerDash')
+        return HttpResponseRedirect('home')
 
     else:
 
         request.path ='/'
         messages.add_message(request, messages.INFO, 'Invalid Login')
         return HttpResponseRedirect(request.path)
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('login')

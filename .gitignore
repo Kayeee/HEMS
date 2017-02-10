@@ -7,3 +7,7 @@ build
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+*HEMSapp/static/images/
+HEMSapp/migrations/
+*.icloud
+HEMSapp/templates/HEMSapp/generic.html

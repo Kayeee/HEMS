@@ -5,7 +5,7 @@ def index(request):
     form = forms.NameForm()
     return render(request, 'HEMSapp/index.html', {'form': form})
 
-def ratePayerDash(request):
-    name = request.user.profile
-    print name
-    return render(request, 'HEMSapp/ratePayerDash.html', {'name': name})
+def home(request):
+    first_name = request.user.first_name
+    last_name = request.user.last_name
+    return render(request, 'HEMSapp/ratePayerDash.html', {'first_name': first_name, 'last_name': last_name})
