@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'HEMSapp',
     'rest_framework',
+    'generic_relations',
 ]
 
 MIDDLEWARE_CLASSES = [

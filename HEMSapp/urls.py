@@ -29,5 +29,7 @@ urlpatterns = [
     url(r'^solarpvins/(?P<pk>[0-9]+)/$', apiViews.SolarPVInDetail.as_view()),
     url(r'^solarpvouts/$', apiViews.SolarPVOutList.as_view()),
     url(r'^solarpvouts/(?P<pk>[0-9]+)/$', apiViews.SolarPVOutDetail.as_view()),
+    url(r'^incidentradiations/$', apiViews.IncidentRadiationList.as_view()),
+    url(r'^incidentradiations/(?P<pk>[0-9]+)/$', apiViews.IncidentRadiationDetail.as_view()),
 
 ]

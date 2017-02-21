@@ -1,38 +1,30 @@
 from rest_framework import serializers
+from django.contrib.auth import get_user_model
+from generic_relations.relations import GenericRelatedField
+
 from HEMSapp.models import *
-
-# class ProjectSerializer(serializers.ModelSerializer):
-#     owner = serializers.ReadOnlyField(source='owner.username')
-#     upload = serializers.PrimaryKeyRelatedField(many=True, queryset=File.objects.all())
-#
-#     class Meta:
-#         model = Project
-#         fields = ('id', 'title', 'owner', 'upload')
-#
-#
-# class FileSerializer(serializers.ModelSerializer):
-#     project = serializers.ReadOnlyField(source='project.id')
-#
-#     class Meta:
-#         model = File
-#         fields = ('id', 'title', 'upload', 'project')
-#
-# class UserSerializer(serializers.ModelSerializer):
-#     project = serializers.PrimaryKeyRelatedField(many=True, queryset=Project.objects.all())
-#
-#     class Meta:
-#         model = MDBUser
-#         fields = ('id', 'username', 'email', 'date_of_birth', 'is_active',
-#                     'is_admin', 'first_name', 'last_name', 'project')
-#
-
 ################### HEMS REVISION ###################
 class HemsUserSerializer(serializers.ModelSerializer):
     hemsbox_set = serializers.PrimaryKeyRelatedField(many=False, required=False, queryset=HemsBox.objects.all())
 
     class Meta:
         model = HemsUser
-        fields = ('id', 'email', 'is_active', 'is_admin', 'first_name', 'last_name', 'hemsbox_set')
+        fields = ('id', 'email', 'is_active', 'is_admin', 'first_name',
+                'last_name', 'hemsbox_set', 'password')
+
+        extra_kwargs = {
+            'password': {'write_only': True},
+        }
+
+    def create(self, validated_data):
+        user = get_user_model().objects.create_user(
+            email=validated_data['email'],
+            first_name=validated_data['first_name'],
+            last_name=validated_data['last_name'],
+            password=validated_data['password'],
+        )
+
+        return user
 
 class HemsBoxSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
@@ -48,12 +40,11 @@ class HemsBoxSerializer(serializers.ModelSerializer):
 
 
 class SolarPVSerializer(serializers.ModelSerializer):
-    in_set = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVIn.objects.all())
-    out_set = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
+    owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = SolarPV
-        fields = ('id', 'name', 'status', 'manufacturer', 'created_date', 'in_set', 'out_set')
+        fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
 
 
 class SolarPVInSerializer(serializers.ModelSerializer):
@@ -63,12 +54,25 @@ class SolarPVInSerializer(serializers.ModelSerializer):
         model = SolarPVIn
         fields = ('id', 'solarPV', 'incidentRadiations')
 
+
+
 class SolarPVOutSerializer(serializers.ModelSerializer):
-    dc_powers = serializers.ReadOnlyField()
-    energies = serializers.ReadOnlyField()
-    voltages = serializers.ReadOnlyField()
-    currents = serializers.ReadOnlyField()
 
     class Meta:
         model = SolarPVOut
-        fields = ('id', 'solarPV', 'dc_powers', 'energies', 'voltages', 'currents')
+        fields = ('id', 'solarPV')
+
+class IncidentRadiationSerializer(serializers.ModelSerializer):
+    # I NEED HELP HERE. HOW DO I SERIALIZE INCIDENT RADIATION WHEN IT IS GENERIC?
+
+
+    # content_object = serializers.RelatedField(queryset=SolarPVIn.objects.all())
+    content_object = serializers.HyperlinkedRelatedField(
+            queryset = SolarPVIn.objects.all(),
+            view_name='solarPV-detail',
+            many=True
+        ),
+
+    class Meta:
+        model = IncidentRadiation
+        fields = ('value', 'content_object')

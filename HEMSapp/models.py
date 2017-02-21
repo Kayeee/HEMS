@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey, GenericRelation
 from django.db.models.signals import *
+from rest_framework import serializers
 
 import time
 
@@ -13,25 +14,11 @@ import time
 
 class HemsUserManager(BaseUserManager):
     def create_user(self, email, first_name, last_name, password):
-        """
-        Creates and saves a User with the given email, and password.
-        """
-        if not email:
-            raise ValueError('Users must have an email address')
-        if not first_name:
-            raise ValueError('User must have a first_name')
-        if not last_name:
-            raise ValueError('User must have a last_name')
-        if not last_name:
-            raise ValueError('User must have a last_name')
-        if not password:
-            raise ValueError('User must have a password')
 
         user = self.model(
             email=self.normalize_email(email),
             first_name=first_name,
             last_name=last_name,
-            password=password,
         )
 
         user.set_password(password)
@@ -39,15 +26,13 @@ class HemsUserManager(BaseUserManager):
         return user
 
     def create_superuser(self, email, first_name, last_name, password):
-        """
-        Creates and saves a superuser with the given email, and password.
-        """
+
         user = self.create_user(
             email,
             first_name=first_name,
             last_name=last_name,
-            password=password,
         )
+        user.set_password(password)
         user.is_admin = True
         user.save(using=self._db)
         return user
@@ -109,14 +94,20 @@ class Address(models.Model):
         verbose_name = "Address"
 
 
-###################### Devices ##########################
+###################### HEMS BOX ##########################
 #our HEMS box
 class HemsBox(models.Model):
     #hemsID is our version of a serial number for the box
     hemsID = models.CharField(max_length=40, default="NoIdEstablished")
     owner = models.OneToOneField(HemsUser, on_delete=models.CASCADE, related_name='hemsbox_set')
 
+    def __str__(self):              # __unicode__ on Python 2
+        return str(self.hemsID)
 
+    class Meta:
+        verbose_name = "Hemx Box"
+
+###################### Devices ##########################
 #Devices attached to HEMS box are called "assets"
 class Asset(models.Model):
     #editable
@@ -125,8 +116,12 @@ class Asset(models.Model):
     hems_box = models.ForeignKey(HemsBox, on_delete=models.CASCADE)
     manufacturer = models.CharField(max_length=40, default="N/A")
 
+
     #Non-editable
     created_date = models.BigIntegerField(default=time.time())
+
+    def __str__(self):              # __unicode__ on Python 2
+        return str(self.id)
 
     class Meta:
         abstract = True
@@ -134,30 +129,35 @@ class Asset(models.Model):
 #Asset Subclasses
 class SolarPV(Asset):
     #Information Unique to a SolarPV
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='solarPV_set')
 
     class Meta:
         default_related_name = 'solarPV_set'
 
 class Inverter(Asset):
     #Information Unique to a Inverter
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='inverter_set')
 
     class Meta:
         default_related_name = 'inverter_set'
 
 class Grid(Asset):
     #Information Unique to a Grid
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='grid_set')
 
     class Meta:
         default_related_name = 'grid_set'
 
 class Load(Asset):
     #Information Unique to a Load
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='load_set')
 
     class Meta:
         default_related_name = 'load_set'
 
 class Battery(Asset):
     #Information Unique to a Battery
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='battery_set')
 
     class Meta:
         default_related_name = 'battery_set'
@@ -181,7 +181,7 @@ class IncidentRadiation(HemsData):
     unit_verbose = "Watts per Meter Squared"
 
     class Meta:
-        default_related_name = 'incident_radiatioin_set'
+        default_related_name = 'incidentRadiation_set'
 
 
 class DCPower(HemsData):
