@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from generic_relations.relations import GenericRelatedField
+from itertools import chain
 
 from HEMSapp.models import *
 ################### HEMS REVISION ###################
@@ -48,31 +49,35 @@ class SolarPVSerializer(serializers.ModelSerializer):
 
 
 class SolarPVInSerializer(serializers.ModelSerializer):
-    incidentRadiations = serializers.PrimaryKeyRelatedField(many=True, queryset=IncidentRadiation.objects.all())
+    #incidentRadiations = serializers.PrimaryKeyRelatedField(many=True, queryset=IncidentRadiation.objects.all())
+    unique_id = serializers.ReadOnlyField()
 
     class Meta:
         model = SolarPVIn
-        fields = ('id', 'solarPV', 'incidentRadiations')
+        fields = ('unique_id', 'solarPV')
 
 
 
 class SolarPVOutSerializer(serializers.ModelSerializer):
+    unique_id = serializers.ReadOnlyField()
 
     class Meta:
         model = SolarPVOut
-        fields = ('id', 'solarPV')
+        fields = ('unique_id', 'solarPV')
 
 class IncidentRadiationSerializer(serializers.ModelSerializer):
-    # I NEED HELP HERE. HOW DO I SERIALIZE INCIDENT RADIATION WHEN IT IS GENERIC?
-
-
-    # content_object = serializers.RelatedField(queryset=SolarPVIn.objects.all())
-    content_object = serializers.HyperlinkedRelatedField(
-            queryset = SolarPVIn.objects.all(),
-            view_name='solarPV-detail',
-            many=True
-        ),
+    #The queryset parameter doesn't really matter since it will likely be changed
+    #in the IncidentRadiationDetail's "perform_create" method (see apiViews.py)
+    content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVIn.objects.all())
 
     class Meta:
         model = IncidentRadiation
+        fields = ('value', 'content_object')
+
+class DCPowerSerializer(serializers.ModelSerializer):
+
+    content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
+
+    class Meta:
+        model = DCPower
         fields = ('value', 'content_object')

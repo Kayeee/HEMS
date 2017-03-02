@@ -9,6 +9,24 @@ from models import *
 from serializers import *
 
 
+def get_content_queryset(asset_direction):
+    """
+    get the appropriate queryset based on the Asset and Direction
+    """
+    asset_directions = {
+        "SolarPVIn": SolarPVIn,
+        "SolarPVOut": SolarPVOut,
+        "InverterIn": InverterIn,
+        "InverterOut": InverterOut,
+        "GridIn": GridIn,
+        "GridOut": GridOut,
+        "LoadIn": LoadIn,
+        "BatteryIn": BatteryIn,
+        "BatteryOut": BatteryOut
+    }
+
+    query_set = asset_directions[asset_direction].objects.all()
+    return query_set
 
 class UserList(generics.ListCreateAPIView):
     queryset = HemsUser.objects.all()
@@ -32,14 +50,13 @@ class HemsBoxDetail(generics.RetrieveAPIView):
     queryset = HemsBox.objects.all()
     serializer_class = HemsBoxSerializer
 
-
+################## Assets ##################
 class SolarPVList(generics.ListCreateAPIView):
     queryset = SolarPV.objects.all()
     serializer_class = SolarPVSerializer
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
-
 
 class SolarPVDetail(generics.RetrieveAPIView):
     queryset = SolarPV.objects.all()
@@ -51,10 +68,7 @@ class SolarPVInList(generics.ListCreateAPIView):
     queryset = SolarPVIn.objects.all()
     serializer_class = SolarPVInSerializer
 
-    def perform_create(self, serializer):
-        print serializer.data
-
-class SolarPVInDetail(generics.RetrieveAPIView):
+class SolarPVInDetail(generics.RetrieveDestroyAPIView):
     queryset = SolarPVIn.objects.all()
     serializer_class = SolarPVInSerializer
 
@@ -68,14 +82,34 @@ class SolarPVOutDetail(generics.RetrieveAPIView):
     queryset = SolarPVOut.objects.all()
     serializer_class = SolarPVOutSerializer
 
-#################### Assets ###################
+#################### HEMS data ###################
 class IncidentRadiationList(generics.ListCreateAPIView):
     queryset = IncidentRadiation.objects.all()
     serializer_class = IncidentRadiationSerializer
 
     def perform_create(self, serializer):
-        print serializer.data
+        print self.request.data['content_object']
 
-class IncidentRadiationDetail(generics.RetrieveAPIView):
+        #content_obj = self.request.data['content_object']
+        content_query_set = get_content_queryset(self.request.data['asset_direction_type'])
+        obj = content_query_set.get(unique_id=self.request.data['content_object'])
+
+        print serializer.save(content_object=obj)
+
+class IncidentRadiationDetail(generics.RetrieveDestroyAPIView):
     queryset = IncidentRadiation.objects.all()
     serializer_class = IncidentRadiationSerializer
+
+class DCPowerList(generics.ListCreateAPIView):
+    queryset = DCPower.objects.all()
+    serializer_class = DCPowerSerializer
+
+    def perform_create(self, serializer):
+        content_query_set = get_content_queryset(self.request.data['asset_direction_type'])
+        obj = content_query_set.get(unique_id=self.request.data['content_object'])
+
+        serializer.save(content_object=obj)
+
+class DCPowerDetail(generics.RetrieveAPIView):
+    queryset = DCPower.objects.all()
+    serializer_class = DCPowerSerializer

@@ -26,10 +26,11 @@ urlpatterns = [
     url(r'^solarpvs/$', apiViews.SolarPVList.as_view()),
     url(r'^solarpvs/(?P<pk>[0-9]+)/$', apiViews.SolarPVDetail.as_view()),
     url(r'^solarpvins/$', apiViews.SolarPVInList.as_view()),
-    url(r'^solarpvins/(?P<pk>[0-9]+)/$', apiViews.SolarPVInDetail.as_view()),
+    url(r'^solarpvins/(?P<pk>[a-zA-Z]+[0-9]+)/$', apiViews.SolarPVInDetail.as_view()),
     url(r'^solarpvouts/$', apiViews.SolarPVOutList.as_view()),
-    url(r'^solarpvouts/(?P<pk>[0-9]+)/$', apiViews.SolarPVOutDetail.as_view()),
+    url(r'^solarpvouts/(?P<pk>[a-zA-Z]+[0-9]+)/$', apiViews.SolarPVOutDetail.as_view()),
     url(r'^incidentradiations/$', apiViews.IncidentRadiationList.as_view()),
     url(r'^incidentradiations/(?P<pk>[0-9]+)/$', apiViews.IncidentRadiationDetail.as_view()),
-
+    url(r'^dcpowers/$', apiViews.DCPowerList.as_view()),
+    url(r'^dcpowers/(?P<pk>[0-9]+)/$', apiViews.DCPowerDetail.as_view()),
 ]

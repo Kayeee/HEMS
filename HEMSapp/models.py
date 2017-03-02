@@ -7,11 +7,19 @@ from rest_framework import serializers
 
 import time
 
+def get_previous_pk(objectType):
+    if objectType.objects.last():
+        oldpk = str(objectType.objects.last().pk)
+        old_number = oldpk.replace(objectType.__name__, "")
+        new_number = int(old_number) + 1
+        return str(new_number)
+    else:
+        return "1"
+
+def increment_in_out_id(objectType):
+    return objectType.__name__ + get_previous_pk(objectType)
 
 ######################## User Info ##########################
-
-
-
 class HemsUserManager(BaseUserManager):
     def create_user(self, email, first_name, last_name, password):
 
@@ -31,8 +39,8 @@ class HemsUserManager(BaseUserManager):
             email,
             first_name=first_name,
             last_name=last_name,
+            password=password,
         )
-        user.set_password(password)
         user.is_admin = True
         user.save(using=self._db)
         return user
@@ -118,7 +126,7 @@ class Asset(models.Model):
 
 
     #Non-editable
-    created_date = models.BigIntegerField(default=time.time())
+    created_date = models.DateField(auto_now_add=True)
 
     def __str__(self):              # __unicode__ on Python 2
         return str(self.id)
@@ -169,7 +177,7 @@ class HemsData(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    object_id = models.PositiveIntegerField()
+    object_id = models.CharField(max_length=20, primary_key=True)
     content_object = GenericForeignKey('content_type', 'object_id')
 
     class Meta:
@@ -291,54 +299,100 @@ class StateOfCharge(HemsData):
 
 
 
+
 ######################## IN and OUT #######################
 class SolarPVIn(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='in_set', null=True)
     incidentRadiations = GenericRelation(IncidentRadiation)
 
+    def save(self, *args, **kwargs):
+
+        if not self.pk:  # object is being created, thus no primary key field yet
+            print "here"
+            self.unique_id = increment_in_out_id(type(self))
+        super(SolarPVIn, self).save(*args, **kwargs)
+
 class SolarPVOut(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     solarPV = models.OneToOneField(SolarPV, on_delete=models.CASCADE, related_name='out_set', null=True)
     dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(SolarPVOut, self).save(*args, **kwargs)
+
 class InverterIn(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     inverter = models.OneToOneField(Inverter, on_delete=models.CASCADE, related_name='in_set')
     dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(InverterIn, self).save(*args, **kwargs)
+
 class InverterOut(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     inverter = models.OneToOneField(Inverter, on_delete=models.CASCADE, related_name='out_set')
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(InverterOut, self).save(*args, **kwargs)
+
 class GridIn(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     grid = models.OneToOneField(Grid, on_delete=models.CASCADE, related_name='in_set')
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(GridIn, self).save(*args, **kwargs)
+
 class GridOut(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     grid = models.OneToOneField(Grid, on_delete=models.CASCADE, related_name='out_set')
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(GridOut, self).save(*args, **kwargs)
+
 class LoadIn(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     load = models.OneToOneField(Load, on_delete=models.CASCADE, related_name='in_set')
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(LoadIn, self).save(*args, **kwargs)
+
 class BatteryIn(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     battery = models.OneToOneField(Battery, on_delete=models.CASCADE, related_name='in_set')
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
@@ -347,7 +401,13 @@ class BatteryIn(models.Model):
     charging_rate = GenericRelation(ChargingRate)
     converter_efficiency = GenericRelation(ConverterEfficiency)
 
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(BatteryIn, self).save(*args, **kwargs)
+
 class BatteryOut(models.Model):
+    unique_id = models.CharField(max_length=20, primary_key=True)
     battery = models.OneToOneField(Battery, on_delete=models.CASCADE, related_name='out_set')
     dc_powers = GenericRelation(DCPower)
     energies = GenericRelation(Energy)
@@ -356,3 +416,8 @@ class BatteryOut(models.Model):
     discharging_rate = GenericRelation(DischargingRate)
     converter_efficiency = GenericRelation(ConverterEfficiency)
     state_of_charge = GenericRelation(StateOfCharge)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:  # object is being created, thus no primary key field yet
+            self.unique_id = increment_in_out_id(type(self))
+        super(BatteryOut, self).save(*args, **kwargs)
