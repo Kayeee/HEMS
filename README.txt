@@ -46,3 +46,12 @@ spvin.solarPV
 
 Getting In/Out from data instance:
 rad.content_object
+
+
+#POSTING HEMS DATA
+post to /hems_data/
+Parameters:
+  content_object = "SolarPVIn1"  #The unique_id of the asset the data is for
+  data_type = "IncidentRadiation" #The type of data being posted
+  value = 345
+  

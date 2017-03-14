@@ -175,9 +175,10 @@ class Battery(Asset):
 class HemsData(models.Model):
     value = models.FloatField(default=-1)
     timestamp = models.DateTimeField(auto_now_add=True)
+    id = models.AutoField(primary_key=True)
 
     content_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-    object_id = models.CharField(max_length=20, primary_key=True)
+    object_id = models.CharField(max_length=20)
     content_object = GenericForeignKey('content_type', 'object_id')
 
     class Meta:
@@ -309,7 +310,6 @@ class SolarPVIn(models.Model):
     def save(self, *args, **kwargs):
 
         if not self.pk:  # object is being created, thus no primary key field yet
-            print "here"
             self.unique_id = increment_in_out_id(type(self))
         super(SolarPVIn, self).save(*args, **kwargs)
 
