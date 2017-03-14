@@ -4,7 +4,8 @@ from generic_relations.relations import GenericRelatedField
 from itertools import chain
 
 from HEMSapp.models import *
-################### HEMS REVISION ###################
+
+#################### HEMS USER SERIALIZER ########################
 class HemsUserSerializer(serializers.ModelSerializer):
     hemsbox_set = serializers.PrimaryKeyRelatedField(many=False, required=False, queryset=HemsBox.objects.all())
 
@@ -27,6 +28,8 @@ class HemsUserSerializer(serializers.ModelSerializer):
 
         return user
 
+
+###################### HEMS BOX SERIALIZER ###################
 class HemsBoxSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     solarPV_set = serializers.PrimaryKeyRelatedField(many=True, queryset=SolarPV.objects.all())
@@ -40,6 +43,7 @@ class HemsBoxSerializer(serializers.ModelSerializer):
         fields = ('id', 'hemsID', 'owner', 'solarPV_set', 'inverter_set', 'grid_set', 'load_set', 'battery_set')
 
 
+#################### Asset Serializers ####################
 class SolarPVSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
@@ -48,6 +52,7 @@ class SolarPVSerializer(serializers.ModelSerializer):
         fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
 
 
+################# ASSET DIRECTION SERIALIZERS ################
 class SolarPVInSerializer(serializers.ModelSerializer):
     #incidentRadiations = serializers.PrimaryKeyRelatedField(many=True, queryset=IncidentRadiation.objects.all())
     unique_id = serializers.ReadOnlyField()
@@ -55,8 +60,6 @@ class SolarPVInSerializer(serializers.ModelSerializer):
     class Meta:
         model = SolarPVIn
         fields = ('unique_id', 'solarPV')
-
-
 
 class SolarPVOutSerializer(serializers.ModelSerializer):
     unique_id = serializers.ReadOnlyField()
@@ -113,148 +116,3 @@ class BatteryOutSerializer(serializers.ModelSerializer):
     class meta:
         model = BatteryOut
         fields = ('unique_id', 'Battery')
-
-
-############ Hems Data Serializers ###############
-# class IncidentRadiationSerializer(serializers.ModelSerializer):
-#     #The queryset parameter doesn't really matter since it will likely be changed
-#     #in the IncidentRadiationDetail's "perform_create" method (see apiViews.py)
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVIn.objects.all())
-#
-#     class Meta:
-#         model = IncidentRadiation
-#         fields = ('value', 'content_object')
-# 
-# class DCPowerSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = DCPower
-#         fields = ('value', 'content_object')
-#
-# class EnergySerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = Energy
-#         fields = ('value', 'content_object')
-#
-# class VoltageEnergySerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = Voltage
-#         fields = ('value', 'content_object')
-#
-# class CurrentSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = Current
-#         fields = ('value', 'content_object')
-#
-# class ACPowerSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ACPower
-#         fields = ('value', 'content_object')
-#
-# class ReactivePowerSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ReactivePower
-#         fields = ('value', 'content_object')
-#
-# class DCACEfficiencySerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = DCACEfficiency
-#         fields = ('value', 'content_object')
-#
-# class ChargingVoltageSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ChargingVoltage
-#         fields = ('value', 'content_object')
-#
-# class ChargingCurrentSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ChargingCurrent
-#         fields = ('value', 'content_object')
-#
-# class ChargingRateSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ChargingRate
-#         fields = ('value', 'content_object')
-#
-# class ConverterEfficiencySerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = ConverterEfficiency
-#         fields = ('value', 'content_object')
-#
-# class DischargingVoltageSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = DischargingVoltage
-#         fields = ('value', 'content_object')
-#
-# class DischargingCurrentSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = DischargingCurrent
-#         fields = ('value', 'content_object')
-#
-# class DischargingRateSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = DischargingRate
-#         fields = ('value', 'content_object')
-#
-# class StateOfChargeSerializer(serializers.ModelSerializer):
-#
-#     content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVOut.objects.all())
-#
-#     class Meta:
-#         model = StateOfCharge
-#         fields = ('value', 'content_object')
-
-##############Generic Serializer#############
-class HemsDataSerializer(serializers.Serializer):
-
-    #content_object = serializers.PrimaryKeyRelatedField(many=False, queryset=SolarPVIn.objects.all())
-    value = serializers.FloatField()
-
-    def create(self, validated_data):
-        """
-        Create and return a new `Snippet` instance, given the validated data.
-        """
-        print type(validated_data['content_object'])
-        print validated_data
-        return obj.objects.create(**validated_data)
