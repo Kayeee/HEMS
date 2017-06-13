@@ -11,3 +11,4 @@ build
 HEMSapp/migrations/
 *.icloud
 HEMSapp/templates/HEMSapp/generic.html
+*.min.js

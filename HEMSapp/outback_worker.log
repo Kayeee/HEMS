@@ -1,0 +1,2167 @@
+[2017-05-31 17:28:00,561: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-05-31 17:28:01,148: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-31 17:28:03,602: INFO/MainProcess] mingle: all alone
+[2017-05-31 17:28:04,976: INFO/MainProcess] outback_worker@Kevins-Macbook-Pro.local ready.
+[2017-05-31 17:28:04,977: INFO/MainProcess] Received task: getAlle[d49f36b3-d54f-442f-8fbf-791fcfe02a8d]  
+[2017-05-31 17:28:04,978: INFO/MainProcess] Received task: getAlle[a5ec7d09-b055-40e2-95b6-49451f560af5]  
+[2017-05-31 17:28:04,979: INFO/MainProcess] Received task: getAlle[ef9c630c-27ab-49fe-9f37-1b039abdbab3]  
+[2017-05-31 17:28:04,979: INFO/MainProcess] Received task: getAlle[7e368153-42ab-4939-b932-2473f7170ecd]  
+[2017-05-31 17:29:32,461: INFO/MainProcess] Received task: getAlle[078082b6-c189-4e24-836c-159acccd82b0]  
+[2017-05-31 17:29:51,944: INFO/MainProcess] Received task: getAlle[7c9dcd92-0577-46ae-82fe-f9effbcbee71]  
+[2017-05-31 17:30:15,533: INFO/MainProcess] Received task: getAlle[b57428be-1c74-4cf9-a742-c6e9867dd5d0]  
+[2017-05-31 17:30:36,085: INFO/MainProcess] Received task: getAlle[af2dac75-38ac-4e66-a083-c9e57d419bd3]  
+[2017-05-31 23:38:46,811: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-05-31 23:38:47,195: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-05-31 23:38:47,919: INFO/MainProcess] mingle: searching for neighbors
+[2017-05-31 23:38:49,688: INFO/MainProcess] mingle: all alone
+[2017-06-01 12:44:01,460: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 12:44:02,051: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 12:44:04,507: INFO/MainProcess] mingle: all alone
+[2017-06-01 12:44:06,081: INFO/MainProcess] outback_worker@kevins-mbp.mobile.asu.edu ready.
+[2017-06-01 12:46:03,453: INFO/MainProcess] Received task: getAlle[44ca7b84-fb36-4e83-a307-426b95a844be]  
+[2017-06-01 13:51:11,953: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 60] Operation timed out
+[2017-06-01 13:51:15,972: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 2.00 seconds...
+
+[2017-06-01 13:51:21,986: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 4.00 seconds...
+
+[2017-06-01 13:51:30,001: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 6.00 seconds...
+
+[2017-06-01 13:51:40,020: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 8.00 seconds...
+
+[2017-06-01 13:51:52,043: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 10.00 seconds...
+
+[2017-06-01 13:52:06,071: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 12.00 seconds...
+
+[2017-06-01 13:52:18,111: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: [Errno 51] Network is unreachable.
+Trying again in 14.00 seconds...
+
+[2017-06-01 13:52:32,137: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: [Errno 51] Network is unreachable.
+Trying again in 16.00 seconds...
+
+[2017-06-01 13:52:48,539: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 13:52:49,091: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 13:52:49,521: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 32] Broken pipe
+[2017-06-01 13:52:50,017: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 13:52:51,043: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 13:52:53,421: INFO/MainProcess] mingle: all alone
+[2017-06-01 13:52:54,872: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-01 13:52:55,229: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 13:52:56,090: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 13:52:57,898: INFO/MainProcess] mingle: all alone
+[2017-06-01 15:00:33,279: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 50] Network is down
+[2017-06-01 15:00:33,629: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 15:00:34,251: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 15:00:34,616: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 32] Broken pipe
+[2017-06-01 15:00:34,985: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 15:00:35,679: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 15:00:37,977: INFO/MainProcess] mingle: all alone
+[2017-06-01 15:00:39,429: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-01 15:00:39,777: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 15:00:40,475: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 15:00:42,242: INFO/MainProcess] mingle: all alone
+[2017-06-01 16:35:34,873: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 60] Operation timed out
+[2017-06-01 16:35:35,233: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 16:35:35,778: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 16:35:36,134: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 32] Broken pipe
+[2017-06-01 16:35:36,463: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 16:35:37,121: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 16:35:39,345: INFO/MainProcess] mingle: all alone
+[2017-06-01 16:35:40,763: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-01 16:35:41,188: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-01 16:35:41,847: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-01 16:35:43,659: INFO/MainProcess] mingle: all alone
+[2017-06-02 12:35:18,837: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-02 12:35:19,376: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-02 12:35:20,441: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-02 12:35:22,567: INFO/MainProcess] mingle: all alone
+[2017-06-02 13:03:58,713: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-02 13:03:59,044: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-02 13:03:59,701: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-02 13:04:01,463: INFO/MainProcess] mingle: all alone
+[2017-06-02 14:04:14,320: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-02 14:04:14,817: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-02 14:04:15,521: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-02 14:04:17,295: INFO/MainProcess] mingle: all alone
+[2017-06-03 01:57:55,846: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-03 01:57:56,388: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-03 01:57:57,047: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-03 01:57:58,853: INFO/MainProcess] mingle: all alone
+[2017-06-03 02:18:29,401: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-03 02:18:29,863: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-03 02:18:30,613: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-03 02:18:32,444: INFO/MainProcess] mingle: all alone
+[2017-06-03 09:29:11,319: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-03 09:29:12,009: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-03 09:29:12,874: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-03 09:29:14,680: INFO/MainProcess] mingle: all alone
+[2017-06-03 14:24:59,168: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-03 14:24:59,532: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-03 14:25:00,229: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-03 16:12:39,439: INFO/MainProcess] mingle: all alone
+[2017-06-03 16:12:41,317: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-03 16:12:41,691: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-03 16:12:42,390: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-03 16:12:44,157: INFO/MainProcess] mingle: all alone
+[2017-06-04 01:00:25,743: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 01:00:26,110: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 01:00:26,762: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 01:00:28,555: INFO/MainProcess] mingle: all alone
+[2017-06-04 06:34:06,659: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 06:34:07,055: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 06:34:07,749: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 06:34:09,509: INFO/MainProcess] mingle: all alone
+[2017-06-04 08:28:16,545: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 08:28:16,906: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 08:28:17,565: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 08:28:19,331: INFO/MainProcess] mingle: all alone
+[2017-06-04 08:43:22,268: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/tasks.py", line 37, in start
+    c.connection, on_decode_error=c.on_decode_error,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/amqp.py", line 302, in TaskConsumer
+    **kw
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 386, in __init__
+    self.revive(self.channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 407, in revive
+    self.declare()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 420, in declare
+    queue.declare()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 604, in declare
+    self._create_exchange(nowait=nowait, channel=channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 611, in _create_exchange
+    self.exchange.declare(nowait=nowait, channel=channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 185, in declare
+    nowait=nowait, passive=passive,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 630, in exchange_declare
+    wait=None if nowait else spec.Exchange.DeclareOk,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 73, in send_method
+    return self.wait(wait, returns_tuple=returns_tuple)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 93, in wait
+    self.connection.drain_events(timeout=timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 08:43:22,635: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 08:43:23,340: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 08:43:25,107: INFO/MainProcess] mingle: all alone
+[2017-06-04 08:43:26,579: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-04 08:43:26,917: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 08:43:27,574: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 08:43:29,345: INFO/MainProcess] mingle: all alone
+[2017-06-04 10:16:22,127: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 10:16:22,484: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 10:16:23,142: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 10:16:24,950: INFO/MainProcess] mingle: all alone
+[2017-06-04 11:53:35,594: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 11:53:36,342: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 11:53:37,000: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 11:53:38,756: INFO/MainProcess] mingle: all alone
+[2017-06-04 14:13:31,198: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 14:13:31,585: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 14:13:32,303: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 14:13:34,109: INFO/MainProcess] mingle: all alone
+[2017-06-04 14:48:24,959: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 14:48:25,284: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 14:48:25,942: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 14:48:27,662: INFO/MainProcess] mingle: all alone
+[2017-06-04 15:38:17,574: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 15:38:17,918: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 15:38:18,571: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 15:38:20,367: INFO/MainProcess] mingle: all alone
+[2017-06-04 21:15:25,591: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 21:15:26,016: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 21:15:26,770: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 21:15:28,570: INFO/MainProcess] mingle: all alone
+[2017-06-04 23:55:35,556: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-04 23:55:35,884: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-04 23:55:36,543: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-04 23:55:38,273: INFO/MainProcess] mingle: all alone
+[2017-06-05 12:33:59,844: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-05 12:34:00,253: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-05 12:34:01,317: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-05 12:34:03,197: INFO/MainProcess] mingle: all alone
+[2017-06-05 23:35:50,527: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-05 23:35:51,618: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-05 23:35:52,356: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-05 23:35:54,257: INFO/MainProcess] mingle: all alone
+[2017-06-06 11:30:24,564: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-06 11:30:25,088: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-06 11:30:26,079: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-06 11:30:28,160: INFO/MainProcess] mingle: all alone
+[2017-06-06 15:45:09,524: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-06 15:45:09,858: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-06 15:45:10,555: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-06 15:45:12,315: INFO/MainProcess] mingle: all alone
+[2017-06-06 19:36:20,740: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-06 19:36:21,109: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-06 19:36:21,760: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-06 19:36:23,522: INFO/MainProcess] mingle: all alone
+[2017-06-06 20:08:59,738: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-06 20:09:00,131: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-06 20:09:00,854: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-06 20:09:02,686: INFO/MainProcess] mingle: all alone
+[2017-06-07 15:21:08,092: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 60] Operation timed out
+[2017-06-07 15:21:08,452: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 15:21:08,984: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 15:21:10,742: INFO/MainProcess] mingle: all alone
+[2017-06-07 20:09:15,187: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-07 20:09:15,515: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 20:09:16,168: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 20:09:16,497: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 32] Broken pipe
+[2017-06-07 20:09:16,824: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 20:09:17,518: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 20:09:19,934: INFO/MainProcess] mingle: all alone
+[2017-06-07 20:09:21,391: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-07 20:09:21,738: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 20:09:22,391: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 20:09:24,193: INFO/MainProcess] mingle: all alone
+[2017-06-07 21:43:43,102: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-07 21:43:43,431: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 21:43:44,126: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 21:43:45,857: INFO/MainProcess] mingle: all alone
+[2017-06-07 23:04:51,408: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-07 23:04:51,734: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-07 23:04:52,434: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-07 23:04:54,201: INFO/MainProcess] mingle: all alone
+[2017-06-08 07:35:37,672: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-08 07:35:38,117: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-08 07:35:38,937: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-08 07:35:40,750: INFO/MainProcess] mingle: all alone
+[2017-06-08 10:27:00,603: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-08 10:27:00,971: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-08 10:27:01,621: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-08 10:27:03,420: INFO/MainProcess] mingle: all alone
+[2017-06-08 13:34:17,387: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-08 13:34:17,715: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-08 13:34:18,371: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-08 13:34:20,168: INFO/MainProcess] mingle: all alone
+[2017-06-08 14:21:25,911: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-08 14:21:26,240: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-08 14:21:26,898: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-08 14:21:28,697: INFO/MainProcess] mingle: all alone
+[2017-06-08 16:49:46,682: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-08 16:49:47,524: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-08 16:49:48,719: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-08 16:49:51,103: INFO/MainProcess] mingle: all alone
+[2017-06-09 08:29:24,458: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-09 08:29:24,828: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-09 08:29:25,485: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-09 08:29:27,254: INFO/MainProcess] mingle: all alone
+[2017-06-09 10:49:50,588: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-09 10:49:50,917: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-09 10:49:51,655: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-09 10:49:53,416: INFO/MainProcess] mingle: all alone
+[2017-06-09 11:55:48,176: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-09 11:55:48,546: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-09 11:55:49,245: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-09 11:55:51,056: INFO/MainProcess] mingle: all alone
+[2017-06-09 23:10:50,532: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-09 23:10:50,892: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-09 23:10:51,550: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-09 23:10:53,399: INFO/MainProcess] mingle: all alone
+[2017-06-09 23:42:03,285: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-09 23:42:04,047: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-09 23:42:05,724: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-09 23:42:08,409: INFO/MainProcess] mingle: all alone
+[2017-06-10 01:36:13,524: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 01:36:13,892: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 01:36:14,547: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-10 01:36:16,305: INFO/MainProcess] mingle: all alone
+[2017-06-10 09:17:55,721: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 09:17:56,085: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 09:17:56,739: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-10 09:17:58,545: INFO/MainProcess] mingle: all alone
+[2017-06-10 12:29:44,862: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 12:29:45,189: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 12:29:45,842: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-10 12:29:47,609: INFO/MainProcess] mingle: all alone
+[2017-06-10 13:26:13,608: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 13:26:13,933: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 13:26:14,590: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-10 13:26:16,396: INFO/MainProcess] mingle: all alone
+[2017-06-10 21:55:11,285: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 21:55:11,613: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 21:55:12,307: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-10 21:55:14,065: INFO/MainProcess] mingle: all alone
+[2017-06-10 23:59:11,293: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-10 23:59:11,686: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-10 23:59:12,472: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 00:19:15,902: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 280, in _publish
+    maybe_declare(self.reply_queue(channel))
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/common.py", line 125, in maybe_declare
+    return _maybe_declare(entity, declared, ident, channel, orig)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/common.py", line 131, in _maybe_declare
+    entity.declare(channel=channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 605, in declare
+    self._create_queue(nowait=nowait, channel=channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 616, in _create_queue
+    self.queue_bind(nowait=nowait, channel=channel)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 661, in queue_bind
+    channel=channel, nowait=nowait)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/entity.py", line 673, in bind_to
+    nowait=nowait,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 944, in queue_bind
+    wait=None if nowait else spec.Queue.BindOk,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 73, in send_method
+    return self.wait(wait, returns_tuple=returns_tuple)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 93, in wait
+    self.connection.drain_events(timeout=timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 00:19:16,360: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 00:19:17,005: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 00:19:18,773: INFO/MainProcess] mingle: all alone
+[2017-06-11 00:19:20,200: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-11 00:19:20,568: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 00:19:21,356: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 00:19:23,197: INFO/MainProcess] mingle: all alone
+[2017-06-11 02:08:03,750: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 02:08:04,153: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 02:08:04,811: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 02:08:06,605: INFO/MainProcess] mingle: all alone
+[2017-06-11 03:35:58,043: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 03:35:58,410: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 03:35:59,066: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 03:36:00,834: INFO/MainProcess] mingle: all alone
+[2017-06-11 10:30:55,946: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 10:30:56,384: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 10:30:57,078: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 10:30:58,843: INFO/MainProcess] mingle: all alone
+[2017-06-11 12:08:28,399: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 12:08:28,760: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 12:08:29,455: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 12:08:31,214: INFO/MainProcess] mingle: all alone
+[2017-06-11 14:25:18,224: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 60] Operation timed out
+[2017-06-11 14:25:22,250: ERROR/MainProcess] consumer: Cannot connect to amqp://Kevin:**@52.87.223.187:5672/pi_env: timed out.
+Trying again in 2.00 seconds...
+
+[2017-06-11 14:25:24,776: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 14:25:25,330: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 14:25:27,129: INFO/MainProcess] mingle: all alone
+[2017-06-11 14:25:27,750: WARNING/MainProcess] /Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py:71: UserWarning: A node named outback_worker@kevins-mbp.mobile.asu.edu is already using this process mailbox!
+
+Maybe you forgot to shutdown the other node or did not do so properly?
+Or if you meant to start multiple nodes on the same host please make sure
+you give each node a unique node name!
+
+  warnings.warn(W_PIDBOX_IN_USE.format(node=self))
+[2017-06-11 23:18:00,331: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-11 23:18:00,693: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 23:18:01,397: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 23:18:01,751: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 38, in start
+    self.sync(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 42, in sync
+    replies = self.send_hello(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/mingle.py", line 55, in send_hello
+    replies = inspect.hello(c.hostname, our_revoked._data) or {}
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 129, in hello
+    return self._request('hello', from_node=from_node, revoked=revoked)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 81, in _request
+    timeout=self.timeout, reply=True,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/app/control.py", line 436, in broadcast
+    limit, callback, channel=channel,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 315, in _broadcast
+    serializer=serializer)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/pidbox.py", line 290, in _publish
+    serializer=serializer,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 181, in publish
+    exchange_name, declare,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/messaging.py", line 203, in _publish
+    mandatory=mandatory, immediate=immediate,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 1748, in _basic_publish
+    (0, exchange, routing_key, mandatory, immediate), msg
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 64, in send_method
+    conn.frame_writer(1, self.channel_id, sig, args, content)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/method_framing.py", line 174, in write_frame
+    write(view[:offset])
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 269, in write
+    self._write(s)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/socket.py", line 228, in meth
+    return getattr(self._sock,name)(*args)
+error: [Errno 32] Broken pipe
+[2017-06-11 23:18:02,074: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 23:18:02,785: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 23:18:05,445: INFO/MainProcess] mingle: all alone
+[2017-06-11 23:18:06,974: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-11 23:18:07,369: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-11 23:18:08,079: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-11 23:18:09,929: INFO/MainProcess] mingle: all alone
+[2017-06-12 01:06:02,504: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/gossip.py", line 108, in start
+    super(Gossip, self).start(c)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 401, in start
+    channel = c.connection.channel()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/connection.py", line 266, in channel
+    chan = self.transport.create_channel(self.connection)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/pyamqp.py", line 100, in create_channel
+    return connection.channel()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 456, in channel
+    channel.open()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/channel.py", line 448, in open
+    spec.Channel.Open, 's', ('',), wait=spec.Channel.OpenOk,
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 73, in send_method
+    return self.wait(wait, returns_tuple=returns_tuple)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/abstract_channel.py", line 93, in wait
+    self.connection.drain_events(timeout=timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-12 01:06:03,491: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 01:06:04,243: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 01:06:06,122: INFO/MainProcess] mingle: all alone
+[2017-06-12 01:06:07,668: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-12 01:06:08,038: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 01:06:08,782: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 01:06:10,623: INFO/MainProcess] mingle: all alone
+[2017-06-12 06:43:47,127: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-12 06:43:47,528: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 06:43:48,325: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 06:43:50,215: INFO/MainProcess] mingle: all alone
+[2017-06-12 07:27:51,051: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-12 07:27:51,407: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 07:27:52,202: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 07:27:54,083: INFO/MainProcess] mingle: all alone
+[2017-06-12 14:15:04,297: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-12 14:15:04,731: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 14:15:05,464: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 16:03:06,392: INFO/MainProcess] mingle: all alone
+[2017-06-12 16:03:08,552: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 216, in _read
+    raise RecoverableConnectionError('Socket was disconnected')
+RecoverableConnectionError: Socket was disconnected
+[2017-06-12 16:03:08,924: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 16:03:09,630: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 16:03:11,666: INFO/MainProcess] mingle: all alone
+[2017-06-12 17:10:36,356: WARNING/MainProcess] consumer: Connection to broker lost. Trying to re-establish the connection...
+Traceback (most recent call last):
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 318, in start
+    blueprint.start(self)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/bootsteps.py", line 119, in start
+    step.start(parent)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/consumer/consumer.py", line 594, in start
+    c.loop(*c.loop_args())
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/celery/worker/loops.py", line 88, in asynloop
+    next(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/async/hub.py", line 345, in create_loop
+    cb(*cbargs)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 236, in on_readable
+    reader(loop)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/kombu/transport/base.py", line 218, in _read
+    drain_events(timeout=0)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 464, in drain_events
+    return self.blocking_read(timeout)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/connection.py", line 468, in blocking_read
+    frame = self.transport.read_frame()
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 237, in read_frame
+    frame_header = read(7, True)
+  File "/Users/kevin/Documents/HEMSproject/env_hems/lib/python2.7/site-packages/amqp/transport.py", line 377, in _read
+    s = recv(n - len(rbuf))
+error: [Errno 54] Connection reset by peer
+[2017-06-12 17:10:36,714: INFO/MainProcess] Connected to amqp://Kevin:**@52.87.223.187:5672/pi_env
+[2017-06-12 17:10:37,586: INFO/MainProcess] mingle: searching for neighbors
+[2017-06-12 17:10:39,393: INFO/MainProcess] mingle: all alone

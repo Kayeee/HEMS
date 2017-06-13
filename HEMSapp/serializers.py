@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
-from generic_relations.relations import GenericRelatedField
 from itertools import chain
 
 from HEMSapp.models import *
@@ -44,7 +43,36 @@ class HemsBoxSerializer(serializers.ModelSerializer):
 
 
 #################### Asset Serializers ####################
+#TODO: GENERALIZE THESE
 class SolarPVSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = SolarPV
+        fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
+
+class InverterSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = SolarPV
+        fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
+
+class GridSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = SolarPV
+        fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
+
+class LoadSerializer(serializers.ModelSerializer):
+    owner = serializers.ReadOnlyField(source='owner.username')
+
+    class Meta:
+        model = SolarPV
+        fields = ('id', 'name', 'owner', 'hems_box', 'status', 'manufacturer')
+
+class BatterySerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
@@ -53,6 +81,7 @@ class SolarPVSerializer(serializers.ModelSerializer):
 
 
 ################# ASSET DIRECTION SERIALIZERS ################
+#TODO: GENERALIZE THESE
 class SolarPVInSerializer(serializers.ModelSerializer):
     #incidentRadiations = serializers.PrimaryKeyRelatedField(many=True, queryset=IncidentRadiation.objects.all())
     unique_id = serializers.ReadOnlyField()

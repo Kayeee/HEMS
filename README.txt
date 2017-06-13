@@ -54,4 +54,5 @@ Parameters:
   content_object = "SolarPVIn1"  #The unique_id of the asset the data is for
   data_type = "IncidentRadiation" #The type of data being posted
   value = 345
-  
+
+#negative grid power net is a flat $0.03 per hour not matter what time of day

@@ -19,6 +19,19 @@ def get_previous_pk(objectType):
 def increment_in_out_id(objectType):
     return objectType.__name__ + get_previous_pk(objectType)
 
+def get_assets(box_instances):
+    boxes = {}
+    for box in list(box_instances):
+        boxes[box.hemsID] = {
+            "solarPVs": box.solarPV_set.all(),
+            "inverters": box.inverter_set.all(),
+            "grid": box.grid_set.all(),
+            "load": box.load_set.all(),
+            "battery": box.battery_set.all()
+        }
+    print "Boxes: {0}".format(boxes)
+    return boxes
+
 ######################## User Info ##########################
 class HemsUserManager(BaseUserManager):
     def create_user(self, email, first_name, last_name, password):
@@ -107,7 +120,7 @@ class Address(models.Model):
 class HemsBox(models.Model):
     #hemsID is our version of a serial number for the box
     hemsID = models.CharField(max_length=40, default="NoIdEstablished")
-    owner = models.OneToOneField(HemsUser, on_delete=models.CASCADE, related_name='hemsbox_set')
+    owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='hemsbox_set')
 
     def __str__(self):              # __unicode__ on Python 2
         return str(self.hemsID)
@@ -298,6 +311,13 @@ class StateOfCharge(HemsData):
     class Meta:
         default_related_name = "state_of_charge_set"
 
+class GridPowerNet(HemsData):
+    unit = "kW"
+    unit_verbose = "Kilowatt"
+
+    class Meta:
+        default_related_name = "grid_power_net_set"
+
 
 
 
@@ -372,6 +392,7 @@ class GridOut(models.Model):
     energies = GenericRelation(Energy)
     voltages = GenericRelation(Voltage)
     currents = GenericRelation(Current)
+    power_net = GenericRelation(GridPowerNet)
 
     def save(self, *args, **kwargs):
         if not self.pk:  # object is being created, thus no primary key field yet
@@ -394,6 +415,7 @@ class LoadIn(models.Model):
 class BatteryIn(models.Model):
     unique_id = models.CharField(max_length=20, primary_key=True)
     battery = models.OneToOneField(Battery, on_delete=models.CASCADE, related_name='in_set')
+    #TODO: CHANGE AC TO DC
     ac_powers = GenericRelation(ACPower)
     energies = GenericRelation(Energy)
     charging_voltage = GenericRelation(ChargingVoltage)
@@ -416,6 +438,7 @@ class BatteryOut(models.Model):
     discharging_rate = GenericRelation(DischargingRate)
     converter_efficiency = GenericRelation(ConverterEfficiency)
     state_of_charge = GenericRelation(StateOfCharge)
+    #TODO: ADD BATTERY CAPACITY AS AMPHOURS OR KILOWATHOURS
 
     def save(self, *args, **kwargs):
         if not self.pk:  # object is being created, thus no primary key field yet

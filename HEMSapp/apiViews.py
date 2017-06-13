@@ -25,6 +25,7 @@ hems_data_types = {
     "DischargingCurrent": DischargingCurrent,
     "DischargingRate": DischargingRate,
     "StateOfCharge": StateOfCharge,
+    "GridPowerNet": GridPowerNet,
 }
 
 def get_content_object(content_object):
@@ -82,6 +83,50 @@ class SolarPVList(generics.ListCreateAPIView):
 class SolarPVDetail(generics.RetrieveAPIView):
     queryset = SolarPV.objects.all()
     serializer_class = SolarPVSerializer
+
+class InverterList(generics.ListCreateAPIView):
+    queryset = Inverter.objects.all()
+    serializer_class = InverterSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class InverterDetail(generics.RetrieveAPIView):
+    queryset = Inverter.objects.all()
+    serializer_class = InverterSerializer
+
+class GridList(generics.ListCreateAPIView):
+    queryset = Grid.objects.all()
+    serializer_class = GridSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class GridDetail(generics.RetrieveAPIView):
+    queryset = Grid.objects.all()
+    serializer_class = GridSerializer
+
+class LoadList(generics.ListCreateAPIView):
+    queryset = Load.objects.all()
+    serializer_class = LoadSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class LoadDetail(generics.RetrieveAPIView):
+    queryset = Load.objects.all()
+    serializer_class = LoadSerializer
+
+class BatteryList(generics.ListCreateAPIView):
+    queryset = Battery.objects.all()
+    serializer_class = BatterySerializer
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
+class BatteryDetail(generics.RetrieveAPIView):
+    queryset = Battery.objects.all()
+    serializer_class = BatterySerializer
 
 
 ##################### In and Out #################
@@ -169,7 +214,10 @@ class BatteryOutDetail(generics.RetrieveAPIView):
 
 #################### HEMS data ###################
 import json
+import datetime
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
+
 
 @csrf_exempt
 def hemsDataCreate(request):
@@ -178,7 +226,31 @@ def hemsDataCreate(request):
     content_object = get_content_object(data['content_object'])
 
     try:
-        data_type.objects.create(content_object=content_object, value=data['value'])
+        obj = data_type.objects.create(content_object=content_object, value=data['value'])
+        #TODO: REMOVE IF STATEMENT FOR PRODUCTION
+        if data['timestamp']:
+            print "at timestamp: {0}".format(data['timestamp'])
+            obj.timestamp = datetime.datetime.strptime(data['timestamp'], '%Y-%m-%dT%H:%M:%SZ')
+            obj.save()
         return HttpResponse(status='201')
     except:
         return HttpResponse(status='500')
+
+
+@csrf_exempt
+def energy_totals(request):
+    month_year_str = request.GET["month"]
+    date = datetime.datetime.strptime(month_year_str, '%B %Y')
+
+    #TODO: REMOVE THIS. FOR TESTING ONLY.
+    # date = date - datetime.timedelta(weeks=4)
+
+    grid_out = GridOut.objects.filter(grid__owner=request.user)[0]
+    data = GridPowerNet.objects.filter(
+        object_id=grid_out.unique_id,
+        timestamp__year=date.year,
+        timestamp__month=date.month #May
+    )
+    data_tuples = [(item.timestamp.strftime('%Y-%m-%dT%H:%M:%SZ'), item.value) for item in data]
+    data_dict = {"data": data_tuples}
+    return HttpResponse(json.dumps(data_dict), content_type='application/json')

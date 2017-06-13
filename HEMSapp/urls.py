@@ -12,11 +12,13 @@ urlpatterns = [
     #views
     url(r'^$', views.index, name='index'),
     url(r'^home$', views.home, name='home'),
-
+    url(r'^registerDevice$', views.registerDevice, name='registerDevice'),
 
     #Request views
     url(r'^login$', requests.login, name='login'),
     url(r'^logout$', requests.logout, name='logout'),
+    url(r'^api/inverter_data/(?P<inverter_id>\d+)/$', requests.get_inverter_data, name='get_inverter_data'),
+    url(r'^registerDevice_api$', requests.registerDevice_api, name='registerDevice_api'),
 
     #API views
     url(r'^users/$', apiViews.UserList.as_view()),
@@ -29,11 +31,8 @@ urlpatterns = [
     url(r'^solarpvins/(?P<pk>[a-zA-Z]+[0-9]+)/$', apiViews.SolarPVInDetail.as_view()),
     url(r'^solarpvouts/$', apiViews.SolarPVOutList.as_view()),
     url(r'^solarpvouts/(?P<pk>[a-zA-Z]+[0-9]+)/$', apiViews.SolarPVOutDetail.as_view()),
-    # url(r'^incidentradiations/$', apiViews.IncidentRadiationList.as_view()),
-    # url(r'^incidentradiations/(?P<pk>[0-9]+)/$', apiViews.IncidentRadiationDetail.as_view()),
-    # url(r'^dcpowers/$', apiViews.DCPowerList.as_view()),
-    # url(r'^dcpowers/(?P<pk>[0-9]+)/$', apiViews.DCPowerDetail.as_view()),
-    # url(r'^hems_data/$', apiViews.HemsDataCreate.as_view()),
     url(r'^hems_data/$', apiViews.hemsDataCreate),
+    url(r'^energy_totals/$', apiViews.energy_totals),
+
 
 ]
