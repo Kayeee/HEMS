@@ -13,6 +13,7 @@ urlpatterns = [
     url(r'^$', views.index, name='index'),
     url(r'^home$', views.home, name='home'),
     url(r'^registerDevice$', views.registerDevice, name='registerDevice'),
+    url(r'^addAsset$', views.addAsset, name='addAsset'),
 
     #Request views
     url(r'^login$', requests.login, name='login'),
@@ -33,6 +34,6 @@ urlpatterns = [
     url(r'^solarpvouts/(?P<pk>[a-zA-Z]+[0-9]+)/$', apiViews.SolarPVOutDetail.as_view()),
     url(r'^hems_data/$', apiViews.hemsDataCreate),
     url(r'^energy_totals/$', apiViews.energy_totals),
-
-
+    url(r'^register_pi/$', apiViews.register_pi),
+    url(r'^add_asset/$', apiViews.add_asset),
 ]

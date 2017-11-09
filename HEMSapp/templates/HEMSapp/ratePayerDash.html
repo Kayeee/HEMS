@@ -60,9 +60,9 @@
 						</div>
 						</div>
 
-						<div ><h4>First Hems Box Name</h4></div>
-
 						<div class="table-wrapper">
+							{% for key, box in boxes.items %}
+							<div ><h4>{{key}}</h4></div>
 							<table>
 								<thead>
 									<tr>
@@ -72,34 +72,19 @@
 									</tr>
 								</thead>
 								<tbody>
-									{% for key, box in boxes.items %}
-										{% for aKey, assetList in box.items %}
-											{% for asset in assetList %}
-												<tr class="asset-row">
-													<td>{{asset.name}}</td>
-													<td>Some battery I bought.</td>
-													<td>30</td>
-												</tr>
-											{% endfor %}
+									{% for aKey, assetList in box.items %}
+										{% for asset in assetList %}
+											<tr class="asset-row">
+												<td>{{asset.name}}</td>
+												<td>Some battery I bought.</td>
+												<td>30</td>
+											</tr>
 										{% endfor %}
 									{% endfor %}
-									<!-- <tr class="asset-row">
-										<td>Battery 1</td>
-										<td>Some battery I bought.</td>
-										<td>30</td>
-									</tr>
-									<tr class="asset-row">
-										<td>Solar PV 1</td>
-										<td>Some Solar PV I bought.</td>
-										<td>56</td>
-									</tr>
-									<tr class="asset-row">
-										<td>Inverter 1</td>
-										<td>Some inverter I bought.</td>
-										<td>115</td> -->
 									</tr>
 								</tbody>
 							</table>
+							{% endfor %}
 						</div>
 		      </div>
 		    </div>

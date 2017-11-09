@@ -26,3 +26,6 @@ def home(request):
 
 def registerDevice(request):
     return render(request, 'HEMSapp/registerDevice.html')
+
+def addAsset(request):
+    return render(request, 'HEMSapp/addAsset.html')

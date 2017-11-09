@@ -8,6 +8,8 @@ from rest_framework.views import APIView
 from models import *
 from serializers import *
 
+import tasks
+
 hems_data_types = {
     "IncidentRadiation": IncidentRadiation,
     "DCPower": DCPower,
@@ -254,3 +256,34 @@ def energy_totals(request):
     data_tuples = [(item.timestamp.strftime('%Y-%m-%dT%H:%M:%SZ'), item.value) for item in data]
     data_dict = {"data": data_tuples}
     return HttpResponse(json.dumps(data_dict), content_type='application/json')
+
+@csrf_exempt
+def register_pi(request):
+    data = request.POST.dict()
+    print("data: " + str(data))
+    hems_id = data["hems_id"]
+
+    handshake_result = tasks.initial_handshake(hems_id)
+
+    # If true, add to database and make perminant queue
+    if handshake_result:
+        box = HemsBox.objects.create(owner=request.user, hemsID=hems_id)
+        return HttpResponseRedirect('/home')
+    else:
+        return HttpResponse(status='400', message='Error registering device, please make sure your device is connected to the internet and you correctly entered its ID')
+
+@csrf_exempt
+def add_asset(request):
+    data = request.POST
+
+    hems_box = HemsBox.objects.get(hemsID=data["hems_id"])
+    device_type = data["device_type"]
+    device_manufacturer = data["device_manufacturer"]
+    device_name = data["device_name"]
+
+    asset = Asset(name=device_name, hems_box=hems_box, manufacturer=device_manufacturer)
+    return HttpResponseRedirect('/home')
+
+@csrf_exempt
+def add_pi_database(request):
+    pass
