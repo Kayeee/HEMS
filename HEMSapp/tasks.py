@@ -5,10 +5,17 @@ from kombu import Queue
 import subprocess
 import random
 import os
+import requests
+import time
+import logging
+import sys
+import json
+import socket
+import fcntl
+import struct
 
-#os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'HEMS.scripts.settings')
 
-app = Celery('interface_worker', backend='amqp', broker='amqp://jessica:ASUi3dea@10.143.239.255/pi_env')
+app = Celery('interface_worker', backend='amqp', broker='amqp://Kevin:ASUi3dea@127.0.0.1/pi_env')
 
 CELERY_DEFAULT_QUEUE = 'interface'
 CELERY_QUEUES = (Queue('interface', routing_key='interface'),

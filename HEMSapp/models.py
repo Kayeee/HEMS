@@ -120,6 +120,7 @@ class Address(models.Model):
 class HemsBox(models.Model):
     #hemsID is our version of a serial number for the box
     hemsID = models.CharField(max_length=40, default="NoIdEstablished")
+    local_ip = models.CharField(max_length=20, default="0.0.0.0")
     owner = models.ForeignKey(HemsUser, on_delete=models.CASCADE, related_name='hemsbox_set')
 
     def __str__(self):              # __unicode__ on Python 2
@@ -444,3 +445,10 @@ class BatteryOut(models.Model):
         if not self.pk:  # object is being created, thus no primary key field yet
             self.unique_id = increment_in_out_id(type(self))
         super(BatteryOut, self).save(*args, **kwargs)
+
+# this is used for the inital wake up call
+class BoxStatusInfo(models.Model):
+    rank = models.CharField(max_length=20) #either "master" or "slave"
+    isOn = models.BooleanField(default=False)
+    box = models.OneToOneField(HemsBox, on_delete=models.CASCADE, related_name='status_set')
+    master = models.ForeignKey(HemsBox, on_delete=models.CASCADE, related_name='slave_set', blank=True)

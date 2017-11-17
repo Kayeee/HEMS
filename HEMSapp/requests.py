@@ -52,3 +52,26 @@ def get_inverter_data(request, inverter_id):
 
     print("result: {0}").format(result_json)
     return JsonResponse(result_json)
+
+def wakeup(request):
+    params = dict(request.GET.iterlists())
+    box_status = BoxStatusInfo.objects.filter(box_id=params['box_id'][0])
+    if not len(box_status) > 0:
+        return HttpResponse("This box does not exist", content_type="text/plain")
+
+    box_status = box_status[0]
+    local_ip = params['local_ip'][0]
+    context = {}
+
+
+
+    if box_status.rank == 'slave':
+        context['rank'] = 'slave'
+        context['master_local_ip'] = box_status.master.local_ip
+        master_box = BoxStatusInfo.objects.get(box_id=box_status.master.id)
+        context['master_isOn'] = master_box.isOn
+    elif box_status.rank == 'master':
+        context['rank'] = 'master'
+        master_box = HemsBox.objects.get(id=box_status.box_id)
+        context['slaves'] = [slave.box_id for slave in master_box.slave_set.all()]
+    return JsonResponse(context)
