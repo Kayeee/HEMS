@@ -451,4 +451,4 @@ class BoxStatusInfo(models.Model):
     rank = models.CharField(max_length=20) #either "master" or "slave"
     isOn = models.BooleanField(default=False)
     box = models.OneToOneField(HemsBox, on_delete=models.CASCADE, related_name='status_set')
-    master = models.ForeignKey(HemsBox, on_delete=models.CASCADE, related_name='slave_set', blank=True)
+    master = models.ForeignKey(HemsBox, on_delete=models.CASCADE, related_name='slave_set', blank=True, null=True)
