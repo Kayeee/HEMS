@@ -8,7 +8,7 @@ from . import views, requests, apiViews
 
 app_name = 'HEMSapp'
 urlpatterns = [
-
+url(r'^hems/', include([
     #views
     url(r'^$', views.index, name='index'),
     url(r'^home$', views.home, name='home'),
@@ -37,4 +37,5 @@ urlpatterns = [
     url(r'^energy_totals/$', apiViews.energy_totals),
     url(r'^register_pi/$', apiViews.register_pi),
     url(r'^add_asset/$', apiViews.add_asset),
+])),
 ]
