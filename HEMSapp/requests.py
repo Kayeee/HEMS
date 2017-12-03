@@ -60,16 +60,19 @@ def wakeup(request):
         return HttpResponse("This box does not exist", content_type="text/plain")
 
     box_status = box_status[0]
+    box_status.isOn = True
+    box_status.save()
+    
     local_ip = params['local_ip'][0]
     context = {}
-
-
 
     if box_status.rank == 'slave':
         context['rank'] = 'slave'
         context['master_local_ip'] = box_status.master.local_ip
         master_box = BoxStatusInfo.objects.get(box_id=box_status.master.id)
         context['master_isOn'] = master_box.isOn
+
+
     elif box_status.rank == 'master':
         context['rank'] = 'master'
         master_box = HemsBox.objects.get(id=box_status.box_id)
