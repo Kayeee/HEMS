@@ -6,6 +6,7 @@ from django.db.models.signals import *
 from rest_framework import serializers
 
 import time
+from datetime import datetime
 
 def get_previous_pk(objectType):
     if objectType.objects.last():
@@ -23,11 +24,14 @@ def get_assets(box_instances):
     boxes = {}
     for box in list(box_instances):
         boxes[box.hemsID] = {
-            "solarPVs": box.solarPV_set.all(),
-            "inverters": box.inverter_set.all(),
-            "grid": box.grid_set.all(),
-            "load": box.load_set.all(),
-            "battery": box.battery_set.all()
+            "assets":{
+                "solarPVs": box.solarPV_set.all(),
+                "inverters": box.inverter_set.all(),
+                "grid": box.grid_set.all(),
+                "load": box.load_set.all(),
+                "battery": box.battery_set.all()
+            },
+            "status": box.status_set.isOn
         }
     print "Boxes: {0}".format(boxes)
     return boxes
@@ -452,3 +456,4 @@ class BoxStatusInfo(models.Model):
     isOn = models.BooleanField(default=False)
     box = models.OneToOneField(HemsBox, on_delete=models.CASCADE, related_name='status_set')
     master = models.ForeignKey(HemsBox, on_delete=models.CASCADE, related_name='slave_set', blank=True, null=True)
+    lastCheckIn = models.DateTimeField()

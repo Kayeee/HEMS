@@ -21,6 +21,7 @@ url(r'^hems/', include([
     url(r'^api/inverter_data/(?P<inverter_id>\d+)/$', requests.get_inverter_data, name='get_inverter_data'),
     url(r'^registerDevice_api$', requests.registerDevice_api, name='registerDevice_api'),
     url(r'^wakeup$', requests.wakeup, name='wakeup'),
+    url(r'^checkIn$', requests.check_in, name='wakcheckIneup'),
 
     #API views
     url(r'^users/$', apiViews.UserList.as_view()),

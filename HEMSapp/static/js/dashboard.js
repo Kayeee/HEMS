@@ -46,7 +46,7 @@ $(document).ready(function(){
 function getData(month) {
   var data = {month: month};
   $.ajax({
-    url: "http://127.0.0.1:8000/energy_totals/",
+    url: "http://127.0.0.1:8000/hems/energy_totals/",
     type: 'GET',
     data: data,
     traditional: true,

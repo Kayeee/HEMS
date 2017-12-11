@@ -62,11 +62,16 @@ def wakeup(request):
     box_status = box_status[0]
     box_status.isOn = True
     box_status.save()
-    
+
     local_ip = params['local_ip'][0]
     context = {}
 
     if box_status.rank == 'slave':
+        # Update with most recent local ip
+        box = HemsBox.objects.get(id=box_status.box_id)
+        box.local_ip = params['local_ip'][0]
+        box.save()
+
         context['rank'] = 'slave'
         context['master_local_ip'] = box_status.master.local_ip
         master_box = BoxStatusInfo.objects.get(box_id=box_status.master.id)
@@ -74,7 +79,23 @@ def wakeup(request):
 
 
     elif box_status.rank == 'master':
+        box = HemsBox.objects.get(id=box_status.box_id)
+        box.local_ip = params['local_ip'][0]
+        box.save()
+
         context['rank'] = 'master'
-        master_box = HemsBox.objects.get(id=box_status.box_id)
-        context['slaves'] = [slave.box_id for slave in master_box.slave_set.all()]
+        context['slaves'] = [slave.box_id for slave in box.slave_set.all()]
     return JsonResponse(context)
+
+def check_in(request):
+    params = dict(request.GET.iterlists())
+    box_status = BoxStatusInfo.objects.filter(box_id=params['box_id'][0])
+    if not len(box_status) > 0:
+        return HttpResponse("This box does not exist", content_type="text/plain")
+
+    box_status = box_status[0]
+    box_status.lastCheckIn = datetime.now() # update the last checkin time
+    box_status.isOn = True
+    box_status.save()
+
+    return HttpResponse(status='200', content=box_status.lastCheckIn)
