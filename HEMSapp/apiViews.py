@@ -285,5 +285,16 @@ def add_asset(request):
     return HttpResponseRedirect('/home')
 
 @csrf_exempt
+def select_device(request):
+    data = request.POST
+    hems_device = data["hems_devices"]
+    hems_method = data["hems_method"]
+    hems_value = data["hems_value"]
+
+    #received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value)
+    received_result = tasks.getResult(1,2)
+    return render(request, "displayResult.html", {"hemsResult:" : received_result})
+
+@csrf_exempt
 def add_pi_database(request):
     pass
