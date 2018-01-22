@@ -293,7 +293,7 @@ def select_device(request):
 
     #received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value)
     received_result = tasks.getResult(1,2)
-    return render(request, "displayResult.html", {"hemsResult:" : received_result})
+    return render(request, "displayResult.html", {"hemsResult" : received_result})
 
 @csrf_exempt
 def add_pi_database(request):
