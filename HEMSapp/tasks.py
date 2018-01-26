@@ -142,3 +142,7 @@ def getResult(x, y):
         if tries > 100:
             return "Cannot get result."
     return result.get()
+
+def getHEMSResult(device, method):
+    result = device + method
+    return result
