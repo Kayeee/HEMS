@@ -104,7 +104,7 @@ def getOutBackResult(hems_device, hems_method, hems_value):
         received_result = result.get()
         print(received_result)
         return received_result
-    else if hems_method=="write":
+    elif hems_method=="write":
         # assign pi to do the tasks
         result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue_number_str,routing_key=queue_number_str)
         tries = 0
