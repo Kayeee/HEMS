@@ -16,7 +16,7 @@ import struct
 
 
 app = Celery('interface_worker', backend='amqp', broker='amqp://Kevin:ASUi3dea@127.0.0.1/pi_env')
-
+queue_number_str = '1'
 CELERY_DEFAULT_QUEUE = 'interface'
 CELERY_QUEUES = (Queue('interface', routing_key='interface'),
     Queue('updater', routing_key='updater'),
@@ -88,11 +88,11 @@ def writeValue(device_name, value):
 
 def getOutBackResult(hems_device, hems_method, hems_value):
     # step 1 create queue
-    queue = create_celery_queue("1")
+    #queue = create_celery_queue("1")
     # step 2 add task to queue
     if hems_method=="read":
         # assign pi to do the tasks
-        result = readValue.apply_async(args=[hems_device], queue=queue,routing_key=queue)
+        result = readValue.apply_async(args=[hems_device], queue=queue_number_str,routing_key=queue_number_str)
         tries = 0
         while result.status != 'SUCCESS':
             print(result.status)
@@ -104,9 +104,9 @@ def getOutBackResult(hems_device, hems_method, hems_value):
         received_result = result.get()
         print(received_result)
         return received_result
-    else:
+    else if hems_method=="write":
         # assign pi to do the tasks
-        result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue,routing_key=queue)
+        result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue_number_str,routing_key=queue_number_str)
         tries = 0
         while result.status != 'SUCCESS':
             print(result.status)
@@ -132,8 +132,8 @@ def run_command(x, y):
 
 def getResult(x, y):
     # step 1 create queue_name
-    queue = create_celery_queue("1")
-    result = run_command.apply_async(args=[x,y], queue=queue, routing_key=queue)
+    #queue = create_celery_queue("1")
+    result = run_command.apply_async(args=[x,y], queue=queue_number_str, routing_key=queue_number_str)
     tries = 0
     while result.status != "SUCCESS":
         print(result.status)
