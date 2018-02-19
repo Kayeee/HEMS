@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="{% static "css/customs.css" %}"/>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="{% static "js/selectDevice.js" %}"></script>
 </head>
 
 <body>
@@ -22,9 +24,12 @@
       <option value="read">Read</option>
       <option value="write">Write</option>
     </select>
-
-    <label for="hems_devices">HEMS Device:</label> <!--> Start on selection of HEMS devices-->
-    <select name="hems_devices">
+    <br>
+    <label for="hems_devices">HEMS Device:</label>
+    <select id="hems_input" name="hems_devices">
+      <optgroup label="Custom">
+        <option value="Custom_Command_Input">Custom Command Input</option>
+      </optgroup>
       <optgroup label="Date and Time">
         <optgroup label="Date">
           <option value="OutBack_Day">OutBack_Day</option>
@@ -124,8 +129,13 @@
         <option value="FNconfig_Shunt_A_Enabled">FNconfig_Shunt_A_Enabled</option>
       </optgroup>
 
-    </select> <!--> End of selection on HEMS Devices-->
-
+    </select>
+    <br>
+    <div id="custom">
+      <label for="hems_custom">HEMS Custom Input:</label>
+      <input type="text" name="hems_custom" style="color:black;" required></input>
+    </div>
+    <br>
     <label for="hems_value">HEMS Value:</label>
     <input type="number" name="hems_value" style="color: black;"></input>
     <button type="submit" class="button">Submit</button>

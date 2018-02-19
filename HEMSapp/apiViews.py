@@ -291,6 +291,9 @@ def select_device(request):
     hems_method = data["hems_method"]
     hems_value = data["hems_value"]
 
+    if hems_device == "Custom_Command_Input":
+        hems_device = data["hems_custom"]
+
     received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value)
     #received_result = tasks.getHEMSResult(hems_device, hems_method)
     #received_result = tasks.getResult(hems_device, hems_method)

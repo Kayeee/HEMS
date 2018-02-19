@@ -92,32 +92,65 @@ def getOutBackResult(hems_device, hems_method, hems_value):
     # step 2 add task to queue
     if hems_method=="read":
         # assign pi to do the tasks
-        result = readValue.apply_async(args=[hems_device], queue=queue_number_str,routing_key=queue_number_str)
-        tries = 0
-        while result.status != 'SUCCESS':
-            print(result.status)
-            tries += 1
-            time.sleep(1)
-            if tries > 100:
-                return "Cannot get result."
-        # receive result from pi
-        received_result = result.get()
-        print(received_result)
-        return received_result
+        return getReadValue(hems_device)
     elif hems_method=="write":
         # assign pi to do the tasks
-        result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue_number_str,routing_key=queue_number_str)
-        tries = 0
-        while result.status != 'SUCCESS':
-            print(result.status)
-            tries += 1
-            time.sleep(1)
-            if tries > 100:
-                return "Cannot get result"
-        # receive result from pi
-        received_result = result.get()
-        print(received_result)
-        return received_result
+        return getWriteValue(hems_device, hems_value)
+
+def getOutBackCommandResult(hems_command):
+    words = hems_command.split()
+    method = words[0]
+    if method == "read":
+        if check_read_words(words):
+            return getReadValue(words[1])
+        else:
+            return "Please check your command line"
+    elif method == "write":
+        if check_write_words(words):
+            return getWriteValue(words[1], words[2])
+        else:
+            return "Please check your command line"
+    else:
+        return "Please check your command line!"
+
+# Helper Method #
+def getReadValue(hems_device):
+    result = readValue.apply_async(args=[hems_device], queue=queue_number_str,routing_key=queue_number_str)
+    tries = 0
+    while result.status != 'SUCCESS':
+        print(result.status)
+        tries += 1
+        time.sleep(1)
+        if tries > 100:
+            return "Cannot get result."
+    # receive result from pi
+    received_result = result.get()
+    print(received_result)
+    return received_result
+
+def getWriteValue(hems_device, hems_value):
+    result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue_number_str,routing_key=queue_number_str)
+    tries = 0
+    while result.status != 'SUCCESS':
+        print(result.status)
+        tries += 1
+        time.sleep(1)
+        if tries > 100:
+            return "Cannot get result"
+    # receive result from pi
+    received_result = result.get()
+    print(received_result)
+    return received_result
+
+def check_read_words(words):
+    if len(words) != 2:
+        return False
+    return True
+
+def check_write_words(words):
+    if len(words) != 3:
+        return False
+    return True
 
 # Test Method #
 @app.task(name='runCommand')
