@@ -90,6 +90,9 @@ def getOutBackResult(hems_device, hems_method, hems_value):
     # step 1 create queue
     #queue = create_celery_queue("1")
     # step 2 add task to queue
+    print(hems_device)
+    print(hems_method)
+    print(hems_value)
     if hems_method=="read":
         # assign pi to do the tasks
         return getReadValue(hems_device)
