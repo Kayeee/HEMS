@@ -14,7 +14,22 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  <script src="{% static "js/selectDevice.js" %}"></script>
+  <script>
+  function check_field_value(){
+    if($(this).val() == 'Custom_Command_Input'){
+      $('#custom').show();
+    }
+    else{
+      $('#custom').hide();
+    }
+  }
+
+  $(document).ready(function(){
+    $('#hems_devices').find('select').change(function(){
+      check_field_value.call($('#hems_devices').find('select'));
+    });
+  });
+  </script>
 </head>
 
 <body>
