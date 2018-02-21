@@ -26,114 +26,114 @@
     </select>
     <br>
     <label for="hems_devices">HEMS Device:</label>
-    <select name="hems_devices" id="hems_devices">
-      <optgroup label="Custom">
-        <option value="Custom_Command_Input">Custom Command Input</option>
-      </optgroup>
-      <optgroup label="Date and Time">
-        <optgroup label="Date">
-          <option value="OutBack_Day">OutBack_Day</option>
-          <option value="OutBack_Month">OutBack_Month</option>
-          <option value="OutBack_Year">OutBack_Year</option>
+    <div id="hems_devices">
+      <select name="hems_devices">
+        <optgroup label="Custom">
+          <option value="Custom_Command_Input">Custom Command Input</option>
         </optgroup>
-        <optgroup label="Time">
-          <option value="OutBack_Hour">OutBack_Hour</option>
-          <option value="OutBack_Minute">OutBack_Minute</option>
-          <option value="OutBack_Second">OutBack_Second</option>
+        <optgroup label="Date and Time">
+          <optgroup label="Date">
+            <option value="OutBack_Day">OutBack_Day</option>
+            <option value="OutBack_Month">OutBack_Month</option>
+            <option value="OutBack_Year">OutBack_Year</option>
+          </optgroup>
+          <optgroup label="Time">
+            <option value="OutBack_Hour">OutBack_Hour</option>
+            <option value="OutBack_Minute">OutBack_Minute</option>
+            <option value="OutBack_Second">OutBack_Second</option>
+          </optgroup>
         </optgroup>
-      </optgroup>
 
-      <optgroup label="System Type">
-        <optgroup label="System Type: Off-grid, Grid-tie, Backup">
-          <option value="FXconfig_Grid_Tie_Enable">FXconfig_Grid_Tie_Enable</option>
-          <option value="FXconfig_Grid_Tie_Window">FXconfig_Grid_Tie_Window</option>
-          <option value="FXconfig_Sell_Volts">FXconfig_Sell_Volts</option>
+        <optgroup label="System Type">
+          <optgroup label="System Type: Off-grid, Grid-tie, Backup">
+            <option value="FXconfig_Grid_Tie_Enable">FXconfig_Grid_Tie_Enable</option>
+            <option value="FXconfig_Grid_Tie_Window">FXconfig_Grid_Tie_Window</option>
+            <option value="FXconfig_Sell_Volts">FXconfig_Sell_Volts</option>
+          </optgroup>
+          <optgroup label="System voltage(V)">
+            <option value="OutBack_System_Voltage">OutBack_System_Voltage</option>
+            <option value="OutBack_Measured_System_Voltage">OutBack_Measured_System_Voltage</option>
+          </optgroup>
+          <optgroup label="Solar array wattage(W)"></optgroup>
+          <optgroup label="Battery type: FLA, AGM, Gel"></optgroup>
         </optgroup>
-        <optgroup label="System voltage(V)">
-          <option value="OutBack_System_Voltage">OutBack_System_Voltage</option>
-          <option value="OutBack_Measured_System_Voltage">OutBack_Measured_System_Voltage</option>
-        </optgroup>
-        <optgroup label="Solar array wattage(W)"></optgroup>
-        <optgroup label="Battery type: FLA, AGM, Gel"></optgroup>
-      </optgroup>
 
-      <optgroup label="Battery Charging Characteristics">
-        <optgroup label="Absorb voltage(V)">
-          <option value="FXconfig_Absorb_Volts">FXconfig_Absorb_Volts</option>
-          <option value="FXconfig_Absorb_Time_Hours">FXconfig_Absorb_Time_Hours</option>
+        <optgroup label="Battery Charging Characteristics">
+          <optgroup label="Absorb voltage(V)">
+            <option value="FXconfig_Absorb_Volts">FXconfig_Absorb_Volts</option>
+            <option value="FXconfig_Absorb_Time_Hours">FXconfig_Absorb_Time_Hours</option>
+          </optgroup>
+          <optgroup label="Float voltage(V)">
+            <option value="FXconfig_Float_Volts">FXconfig_Float_Volts</option>
+            <option value="FXconfig_Float_Time_Hours">FXconfig_Float_Time_Hours</option>
+            <option value="FXconfig_ReFloat_Volts">FXconfig_ReFloat_Volts</option>
+          </optgroup>
+          <optgroup label="Equalize voltage(V)">
+            <option value="FXconfig_EQ_Volts">FXconfig_EQ_Volts</option>
+            <option value="FXconfig_EQ_Time_Hours">FXconfig_EQ_Time_Hours</option>
+          </optgroup>
+          <optgroup label="Refloat voltage(V)">
+            <option value="FXconfig_ReFloat_Volts">FXconfig_ReFloat_Volts</option>
+          </optgroup>
         </optgroup>
-        <optgroup label="Float voltage(V)">
-          <option value="FXconfig_Float_Volts">FXconfig_Float_Volts</option>
-          <option value="FXconfig_Float_Time_Hours">FXconfig_Float_Time_Hours</option>
-          <option value="FXconfig_ReFloat_Volts">FXconfig_ReFloat_Volts</option>
-        </optgroup>
-        <optgroup label="Equalize voltage(V)">
-          <option value="FXconfig_EQ_Volts">FXconfig_EQ_Volts</option>
-          <option value="FXconfig_EQ_Time_Hours">FXconfig_EQ_Time_Hours</option>
-        </optgroup>
-        <optgroup label="Refloat voltage(V)">
-          <option value="FXconfig_ReFloat_Volts">FXconfig_ReFloat_Volts</option>
-        </optgroup>
-      </optgroup>
 
-      <optgroup label="AC Configuration">
-        <optgroup label="AC output voltage(V)">
-          <option value="FXconfig_AC_Output_Voltage">FXconfig_AC_Output_Voltage</option>
+        <optgroup label="AC Configuration">
+          <optgroup label="AC output voltage(V)">
+            <option value="FXconfig_AC_Output_Voltage">FXconfig_AC_Output_Voltage</option>
+          </optgroup>
+          <optgroup label="AC phase: Single, split, 3-phase">
+            <option value="FXconfig_Stacking_Mode">FXconfig_Stacking_Mode</option>
+          </optgroup>
+          <optgroup label="AC input breaker size">
+            <option value="FXconfig_AC_Input_Type">FXconfig_AC_Input_Type</option>
+            <option value="FXconfig_Grid_AC_Input_Current_Limit">FXconfig_Grid_AC_Input_Current_Limit</option>
+            <option value="FXconfig_Gen_AC_Input_Current_Limit">FXconfig_Gen_AC_Input_Current_Limit</option>
+          </optgroup>
+          <optgroup label="Maximum output load(A)">
+            <option value="FXconfig_AC_Output_Voltage">FXconfig_AC_Output_Voltage</option>
+          </optgroup>
         </optgroup>
-        <optgroup label="AC phase: Single, split, 3-phase">
-          <option value="FXconfig_Stacking_Mode">FXconfig_Stacking_Mode</option>
-        </optgroup>
-        <optgroup label="AC input breaker size">
-          <option value="FXconfig_AC_Input_Type">FXconfig_AC_Input_Type</option>
-          <option value="FXconfig_Grid_AC_Input_Current_Limit">FXconfig_Grid_AC_Input_Current_Limit</option>
-          <option value="FXconfig_Gen_AC_Input_Current_Limit">FXconfig_Gen_AC_Input_Current_Limit</option>
-        </optgroup>
-        <optgroup label="Maximum output load(A)">
-          <option value="FXconfig_AC_Output_Voltage">FXconfig_AC_Output_Voltage</option>
-        </optgroup>
-      </optgroup>
 
-      <optgroup label="n">
-        <optgroup label="Grid lower voltage(V)">
-          <option value="FXconfig_Grid_Lower_Input_Voltage_Limit">FXconfig_Grid_Lower_Input_Voltage_Limit</option>
+        <optgroup label="n">
+          <optgroup label="Grid lower voltage(V)">
+            <option value="FXconfig_Grid_Lower_Input_Voltage_Limit">FXconfig_Grid_Lower_Input_Voltage_Limit</option>
+          </optgroup>
+          <optgroup label="Grid upper voltage(V)">
+            <option value="FXconfig_Grid_Upper_Input_Voltage_Limit">FXconfig_Grid_Upper_Input_Voltage_Limit</option>
+            <option value="FXconfig_Grid_Transfer_Delay">FXconfig_Grid_Transfer_Delay</option>
+          </optgroup>
+          <optgroup label="Generator lower voltage(V)">
+            <option value="FXconfig_Gen_Lower_Input_Voltage_Limit">FXconfig_Gen_Lower_Input_Voltage_Limit</option>
+          </optgroup>
+          <optgroup label="Generator upper voltage(V)">
+            <option value="FXconfig_Gen_Upper_Input_Voltage_Limit">FXconfig_Gen_Upper_Input_Voltage_Limit</option>
+            <option value="FXconfig_Gen_Transfer_Delay">FXconfig_Gen_Transfer_Delay</option>
+            <option value="FXconfig_Gen_Connect_Delay">FXconfig_Gen_Connect_Delay</option>
+          </optgroup>
         </optgroup>
-        <optgroup label="Grid upper voltage(V)">
-          <option value="FXconfig_Grid_Upper_Input_Voltage_Limit">FXconfig_Grid_Upper_Input_Voltage_Limit</option>
-          <option value="FXconfig_Grid_Transfer_Delay">FXconfig_Grid_Transfer_Delay</option>
-        </optgroup>
-        <optgroup label="Generator lower voltage(V)">
-          <option value="FXconfig_Gen_Lower_Input_Voltage_Limit">FXconfig_Gen_Lower_Input_Voltage_Limit</option>
-        </optgroup>
-        <optgroup label="Generator upper voltage(V)">
-          <option value="FXconfig_Gen_Upper_Input_Voltage_Limit">FXconfig_Gen_Upper_Input_Voltage_Limit</option>
-          <option value="FXconfig_Gen_Transfer_Delay">FXconfig_Gen_Transfer_Delay</option>
-          <option value="FXconfig_Gen_Connect_Delay">FXconfig_Gen_Connect_Delay</option>
-        </optgroup>
-      </optgroup>
 
-      <optgroup label="Generator Configuration">
-        <optgroup label="Generator: Yes, no">
-          <option value="OutBack_AGS_Generator_Type">OutBack_AGS_Generator_Type</option>
+        <optgroup label="Generator Configuration">
+          <optgroup label="Generator: Yes, no">
+            <option value="OutBack_AGS_Generator_Type">OutBack_AGS_Generator_Type</option>
+          </optgroup>
+          <optgroup label="Generator type: AC, DC"></optgroup>
+          <optgroup label="Generator size(kW)"></optgroup>
+          <optgroup label="Start type: Manual, auto">
+            <option value="OutBack_AGS_Mode">OutBack_AGS_Mode</option>
+          </optgroup>
+          <optgroup label="Aux output port">
+            <option value="FNconfig_Port_Number">FNconfig_Port_Number</option>
+          </optgroup>
         </optgroup>
-        <optgroup label="Generator type: AC, DC"></optgroup>
-        <optgroup label="Generator size(kW)"></optgroup>
-        <optgroup label="Start type: Manual, auto">
-          <option value="OutBack_AGS_Mode">OutBack_AGS_Mode</option>
+        <optgroup label="Battery Monitor Connection">
+          <option value="FNconfig_Shunt_A_Enabled">FNconfig_Shunt_A_Enabled</option>
         </optgroup>
-        <optgroup label="Aux output port">
-          <option value="FNconfig_Port_Number">FNconfig_Port_Number</option>
-        </optgroup>
-      </optgroup>
-
-      <optgroup label="Battery Monitor Connection">
-        <option value="FNconfig_Shunt_A_Enabled">FNconfig_Shunt_A_Enabled</option>
-      </optgroup>
-
-    </select>
+      </select>
+    </div>
     <br>
     <div id="custom">
       <label for="hems_custom">HEMS Custom Input:</label>
-      <input type="text" name="hems_custom" style="color:black;" required></input>
+      <input type="text" name="hems_custom" style="color:black;"></input>
     </div>
     <br>
     <label for="hems_value">HEMS Value:</label>
