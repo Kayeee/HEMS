@@ -8,7 +8,7 @@ function check_field_value(){
 }
 
 $(document).ready(function(){
-  $('div select').first().change(function(){
-    check_field_value.call($('div select').first());
+  $('#hems_devices').find('select').change(function(){
+    check_field_value.call($('#hems_devices').find('select'));
   });
 });
