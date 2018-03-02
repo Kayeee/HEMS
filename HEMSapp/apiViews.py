@@ -291,7 +291,7 @@ def select_device(request):
     hems_method = data["hems_method"]
     hems_value = data["hems_value"]
     hems_custom = data["hems_custom"]
-    hems_pi = datap["hems_pi"]
+    hems_pi = data["hems_pi"]
     received_result = ""
 
     if hems_device == "Custom_Command_Input":
