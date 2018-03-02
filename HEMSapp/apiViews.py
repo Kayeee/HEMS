@@ -291,16 +291,17 @@ def select_device(request):
     hems_method = data["hems_method"]
     hems_value = data["hems_value"]
     hems_custom = data["hems_custom"]
+    hems_pi = datap["hems_pi"]
     received_result = ""
 
     if hems_device == "Custom_Command_Input":
         if hems_custom:
             hems_device = data["hems_custom"]
-            received_result = tasks.getOutBackResult(hems_custom, hems_method, hems_value)
+            received_result = tasks.getOutBackResult(hems_custom, hems_method, hems_value, hems_pi)
         else:
             received_result = "No valid hems custom device provided, please go back and check again."
     else:
-        received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value)
+        received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value, hems_pi)
     #received_result = tasks.getHEMSResult(hems_device, hems_method)
     #received_result = tasks.getResult(hems_device, hems_method)
     return render(request, "displayResult.html", {"hemsResult" : received_result, "hemsValue": hems_value})

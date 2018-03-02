@@ -86,19 +86,20 @@ def writeValue(device_name, value):
         raise OSError("covert error")
     return out
 
-def getOutBackResult(hems_device, hems_method, hems_value):
+def getOutBackResult(hems_device, hems_method, hems_value, hems_pi):
     # step 1 create queue
     #queue = create_celery_queue("1")
     # step 2 add task to queue
     print(hems_device)
     print(hems_method)
     print(hems_value)
+    print(hems_pi)
     if hems_method=="read":
         # assign pi to do the tasks
-        return getReadValue(hems_device)
+        return getReadValue(hems_device, hems_pi)
     elif hems_method=="write":
         # assign pi to do the tasks
-        return getWriteValue(hems_device, hems_value)
+        return getWriteValue(hems_device, hems_value, hems_pi)
 
 def getOutBackCommandResult(hems_command):
     words = hems_command.split()
@@ -117,8 +118,8 @@ def getOutBackCommandResult(hems_command):
         return "Please check your command line!"
 
 # Helper Method #
-def getReadValue(hems_device):
-    result = readValue.apply_async(args=[hems_device], queue=queue_number_str,routing_key=queue_number_str)
+def getReadValue(hems_device, hems_pi):
+    result = readValue.apply_async(args=[hems_device], queue=hems_pi,routing_key=hems_pi)
     tries = 0
     while result.status != 'SUCCESS':
         print(result.status)
@@ -131,8 +132,8 @@ def getReadValue(hems_device):
     print(received_result)
     return received_result
 
-def getWriteValue(hems_device, hems_value):
-    result = writeValue.apply_async(args=[hems_device, hems_value], queue=queue_number_str,routing_key=queue_number_str)
+def getWriteValue(hems_device, hems_value, hems_pi):
+    result = writeValue.apply_async(args=[hems_device, hems_value], queue=hems_pi,routing_key=hems_pi)
     tries = 0
     while result.status != 'SUCCESS':
         print(result.status)

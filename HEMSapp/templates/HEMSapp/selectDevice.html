@@ -34,6 +34,13 @@
 
 <body>
   <form method="post" action="/hems/select_device/">{% csrf_token %}
+    <label for="hems_pi">HEMS Pi:</label>
+    <select name="hems_pi">
+      <option value="1">Pi1</option>
+      <option value="3">Pi3</option>
+    </select>
+    <br>
+
     <label for="hems_method">HEMS Method:</label>
     <select name="hems_method">
       <option value="read">Read</option>
