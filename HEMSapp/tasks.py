@@ -158,7 +158,7 @@ def check_write_words(words):
 
 @app.task(name='readRegs')
 def readRegValues(register_names):
-    result = subprocess.Popen(['python', 'read_outback_registers.py', register_names], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    result = subprocess.Popen(['python', 'read_outback_registers.py'] + register_names, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     out, err = result.communicate()
     if result.returncode != 0:
         print('stderr: [%s]' % err)
@@ -167,7 +167,7 @@ def readRegValues(register_names):
 
 @app.task(name='writeRegs')
 def writeRegValues(register_names, write_values):
-    result = subprocess.Popen(['python','write_outback_registers.py', register_names, write_values], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    result = subprocess.Popen(['python','write_outback_registers.py']+register_names+write_values, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     out, err = result.communicate()
     if result.returncode != 0:
         print('stderr: [%s]' % err)
