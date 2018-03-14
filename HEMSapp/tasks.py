@@ -156,30 +156,20 @@ def check_write_words(words):
         return False
     return True
 
-# Test Method #
-@app.task(name='runCommand')
-def run_command(x, y):
-    os.chdir("HEMS/project/wrapper_python")
-    result = subprocess.Popen(["python", "test1.py", str(x), str(y)], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+@app.task(name='readRegs')
+def readRegValues(register_names):
+    result = subprocess.Popen(['python', 'read_outback_registers.py', register_names], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     out, err = result.communicate()
     if result.returncode != 0:
-        print("stderr: [%s]" % err)
-        print("stdout: [%s]" % out)
-    return out
+        print('stderr: [%s]' % err)
+        print('stderr: [%s]' % out)
+    return True
 
-def getResult(x, y):
-    # step 1 create queue_name
-    #queue = create_celery_queue("1")
-    result = run_command.apply_async(args=[x,y], queue=queue_number_str, routing_key=queue_number_str)
-    tries = 0
-    while result.status != "SUCCESS":
-        print(result.status)
-        tries += 1
-        time.sleep(1)
-        if tries > 100:
-            return "Cannot get result."
-    return result.get()
-
-def getHEMSResult(device, method):
-    result = device + method
-    return result
+@app.task(name='writeRegs')
+def writeRegValues(register_names, write_values):
+    result = subprocess.Popen(['python','write_outback_registers.py', register_names, write_values], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+    out, err = result.communicate()
+    if result.returncode != 0:
+        print('stderr: [%s]' % err)
+        print('stderr: [%s]' % out)
+    return True
