@@ -460,7 +460,7 @@ class BoxStatusInfo(models.Model):
 
 # this is used for the 5-minute interval record
 class RegisterValueInfo(models.Model):
-    register_name = models.CharField()
+    register_name = models.CharField(max_length=255)
     value = models.CharField(max_length=10)
     recordTime = models.DateTimeField()
     box_id = models.CharField(max_length=40, default="NoIdEstablished")
