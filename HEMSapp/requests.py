@@ -102,9 +102,9 @@ def check_in(request):
 
 def record_value(request):
     params = dict(request.GET.iterlists())
-    item = RegisterValueInfo(registerName=params['register_name'], value=params['value'])
-    time = datetime.datetime.strptime(params['date_time'], '%Y-%m-%dT%H:%M:%S.%fZ')
-    pi_id = params['pi_id']
+    item = RegisterValueInfo(register_name=params['register_name'][0], value=params['value'][0])
+    time = datetime.datetime.strptime(params['date_time'][0], '%Y-%m-%dT%H:%M:%S.%fZ')
+    pi_id = params['pi_id'][0]
     item.recordTime = time
     item.box_id = pi_id
     item.save()
