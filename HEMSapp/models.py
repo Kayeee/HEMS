@@ -457,3 +457,10 @@ class BoxStatusInfo(models.Model):
     box = models.OneToOneField(HemsBox, on_delete=models.CASCADE, related_name='status_set')
     master = models.ForeignKey(HemsBox, on_delete=models.CASCADE, related_name='slave_set', blank=True, null=True)
     lastCheckIn = models.DateTimeField()
+
+# this is used for the 5-minute interval record
+class RegisterValueInfo(models.Model):
+    register_name = models.CharField()
+    value = models.CharField(max_length=10)
+    recordTime = models.DateTimeField()
+    box_id = models.CharField(max_length=40, default="NoIdEstablished")

@@ -23,6 +23,7 @@ url(r'^hems/', include([
     url(r'^registerDevice_api$', requests.registerDevice_api, name='registerDevice_api'),
     url(r'^wakeup$', requests.wakeup, name='wakeup'),
     url(r'^checkIn$', requests.check_in, name='wakcheckIneup'),
+    url(r'^recordValue$', requests.record_value, name='recordValue'),
 
     #API views
     url(r'^users/$', apiViews.UserList.as_view()),
