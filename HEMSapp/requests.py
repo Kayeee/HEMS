@@ -108,3 +108,5 @@ def record_value(request):
     item.recordTime = time
     item.box_id = pi_id
     item.save()
+
+    return HttpResponse("Record is created successfully.")
