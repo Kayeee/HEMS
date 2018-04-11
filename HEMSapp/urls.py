@@ -15,6 +15,7 @@ url(r'^hems/', include([
     url(r'^registerDevice$', views.registerDevice, name='registerDevice'),
     url(r'^addAsset$', views.addAsset, name='addAsset'),
     url(r'^selectDevice$', views.selectDevice, name='selectDevice'),
+    url(r'^simpleUpload$', views.simpleUpload, name='simpleUpload'),
 
     #Request views
     url(r'^login$', requests.login, name='login'),
