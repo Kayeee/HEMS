@@ -46,7 +46,7 @@ $(document).ready(function(){
 function getData(month) {
   var data = {month: month};
   $.ajax({
-    url: "http://www.asuleaps.com/hems/energy_totals/",
+    url: "http://asuleaps.com/hems/energy_totals/",
     type: 'GET',
     data: data,
     traditional: true,
