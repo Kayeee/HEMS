@@ -119,32 +119,62 @@ def getOutBackCommandResult(hems_command):
 
 # Helper Method #
 def getReadValue(hems_device, hems_pi):
-    result = readValue.apply_async(args=[hems_device], queue=hems_pi,routing_key=hems_pi)
-    tries = 0
-    while result.status != 'SUCCESS':
-        print(result.status)
-        tries += 1
-        time.sleep(1)
-        if tries > 100:
-            return "Cannot get result."
-    # receive result from pi
-    received_result = result.get()
-    print(received_result)
-    return received_result
+    if hems_pi=="2":
+        result = readValueTrans.apply_async(args=[hems_device], queue="1",routing_key="1")
+        tries = 0
+        while result.status != 'SUCCESS':
+            print(result.status)
+            tries += 1
+            time.sleep(1)
+            if tries > 100:
+                return "Cannot get result."
+        # receive result from pi
+        received_result = result.get()
+        print(received_result)
+        return received_result
+    else:
+        result = readValue.apply_async(args=[hems_device], queue=hems_pi,routing_key=hems_pi)
+        tries = 0
+        while result.status != 'SUCCESS':
+            print(result.status)
+            tries += 1
+            time.sleep(1)
+            if tries > 100:
+                return "Cannot get result."
+        # receive result from pi
+        received_result = result.get()
+        print(received_result)
+        return received_result
+
 
 def getWriteValue(hems_device, hems_value, hems_pi):
-    result = writeValue.apply_async(args=[hems_device, hems_value], queue=hems_pi,routing_key=hems_pi)
-    tries = 0
-    while result.status != 'SUCCESS':
-        print(result.status)
-        tries += 1
-        time.sleep(1)
-        if tries > 100:
-            return "Cannot get result"
-    # receive result from pi
-    received_result = result.get()
-    print(received_result)
-    return received_result
+    if hems_pi=="2":
+        result = writeValueTrans.apply_async(args=[hems_device,hems_value], queue="1",routing_key="1")
+        tries = 0
+        while result.status != 'SUCCESS':
+            print(result.status)
+            tries += 1
+            time.sleep(1)
+            if tries > 100:
+                return "Cannot get result."
+        # receive result from pi
+        received_result = result.get()
+        print(received_result)
+        return received_result
+    else:
+        result = writeValue.apply_async(args=[hems_device, hems_value], queue=hems_pi,routing_key=hems_pi)
+        tries = 0
+        while result.status != 'SUCCESS':
+            print(result.status)
+            tries += 1
+            time.sleep(1)
+            if tries > 100:
+                return "Cannot get result"
+        # receive result from pi
+        received_result = result.get()
+        print(received_result)
+        return received_result
+
 
 def check_read_words(words):
     if len(words) != 2:
@@ -173,3 +203,43 @@ def writeRegValues(register_names, write_values):
         print('stderr: [%s]' % err)
         print('stderr: [%s]' % out)
     return True
+
+@app.task(name='readValueTrans')
+def readValueTrans(device_name):
+    result = trans.readValue.apply_async(args=[device_name], queue='2', routing_key='2')
+    while not result.ready():
+        print('waiting for result from slave')
+        time.sleep(1)
+
+    with allow_join_result():
+        return result.get()
+
+@app.task(name='writeValueTrans')
+def writeValueTrans(device_name, value):
+    result = trans.readValue.apply_async(args=[device_name, value], queue='2', routing_key='2')
+    while not result.ready():
+        print('waiting for result from slave')
+        time.sleep(1)
+
+    with allow_join_result():
+        return result.get()
+
+@app.task(name='readRegsTrans')
+def readRegValuesTrans(register_names):
+    result = trans.readValue.apply_async(args=[register_names], queue='2', routing_key='2')
+    while not result.ready():
+        print('waiting for result from slave')
+        time.sleep(1)
+
+    with allow_join_result():
+        return result.get()
+
+@app.task(name='writeRegsTrans')
+def writeRegValuesTrans(register_names, write_values):
+    result = trans.readValue.apply_async(args=[register_names, write_values], queue='2', routing_key='2')
+    while not result.ready():
+        print('waiting for result from slave')
+        time.sleep(1)
+
+    with allow_join_result():
+        return result.get()

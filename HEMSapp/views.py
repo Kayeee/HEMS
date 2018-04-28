@@ -9,6 +9,7 @@ import json
 import unicodedata
 import pandas as pd
 import ast
+import tasks
 
 def index(request):
     form = forms.NameForm()
@@ -93,6 +94,10 @@ def simpleUpload(request):
 
     return render(request, 'HEMSapp/selectDevice.html')
 
+def autoWriteOutbackSeries(request):
+    write_box = request.POST["write_box"]
+    field_value_json = open_previous_file('field_value.txt')
+    write_value_outback(field_value_json, write_box)
 
 ############## Helper functions ##############
 
@@ -154,3 +159,7 @@ def unicode_convert(unicode_dictionary):
     # Convert a unicode to string
     #return ast.literal_eval(json.dumps(unicode_dictionary))
     return json.dumps(unicode_dictionary)
+
+def write_value_outback(field_value_json, write_box):
+    for key in field_value_json:
+        tasks.getWriteValue(key, field_value_json[key],write_box)

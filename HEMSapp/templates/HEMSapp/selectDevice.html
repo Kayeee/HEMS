@@ -120,6 +120,7 @@
     <label for="hems_pi">HEMS Pi:</label>
     <select name="hems_pi">
       <option value="1">Pi1</option>
+      <option value="2">Pi2</option>
       <option value="3">Pi3</option>
     </select>
 
@@ -159,8 +160,19 @@
   </form>  <!-- end of form -->
 
   <form method="post" enctype="multipart/form-data" action="/hems/simpleUpload">{% csrf_token %}
-   <input type="file" name="csv_file" accept=".csv" required="True">
+   <input type="file" name="csv_file" accept=".csv" required="True"></input>
    <button type="submit">Upload</button>
+  </form>
+
+  <form method="POST" action="/hems/autoWriteOutbackSeries">{% csrf_token %}
+    <p>This section is used for automatically write values to OutBack after you have uploaded the csv file.</p>
+    <label for="write_box">Choose Pi:</label>
+    <select name="write_box">
+      <option value="1">Pi1</option>
+      <option value="2">Pi2</option>
+      <option value="3">Pi3</option>
+    </select>
+    <button type="submit">Auto Write</button>
   </form>
 
 
