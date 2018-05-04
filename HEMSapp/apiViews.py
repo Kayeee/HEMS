@@ -288,6 +288,7 @@ def add_asset(request):
 def select_device(request):
     data = request.POST
     hems_device = data["hems_devices"]
+    hems_field = data["hems_field"]
     hems_method = data["hems_method"]
     hems_value = data["hems_value"]
     hems_custom = data["hems_custom"]
@@ -301,7 +302,7 @@ def select_device(request):
         else:
             received_result = "No valid hems custom device provided, please go back and check again."
     else:
-        received_result = tasks.getOutBackResult(hems_device, hems_method, hems_value, hems_pi)
+        received_result = tasks.getOutBackResult(hems_field, hems_method, hems_value, hems_pi)
     #received_result = tasks.getHEMSResult(hems_device, hems_method)
     #received_result = tasks.getResult(hems_device, hems_method)
     return render(request, "displayResult.html", {"hemsResult" : received_result, "hemsValue": hems_value})
